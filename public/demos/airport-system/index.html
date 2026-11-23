@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Musavi Airport — Sukkur</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================
+       HEADER
+       ============================ -->
+  <header id="top-header">
+    <!-- Toggle Button -->
+    <button id="menu-toggle">☰ Menu</button>
+
+    <!-- Logo -->
+    <img id="site-logo" src="images/logo.jpeg" alt="Airport logo" />
+
+    <!-- Title -->
+    <div id="site-title">
+      <h1 class="airport-name">Musavi Airport <span class="airport-location">— Sukkur</span></h1>
+    </div>
+
+    <!-- Language -->
+    <div id="lang-switch">
+      
+      <button id="theme-toggle" class="theme-toggle-btn">🌙</button>
+    </div>
+  </header>
+
+  <!-- ============================
+       PAGE LAYOUT
+       ============================ -->
+  <div id="page-wrapper">
+
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <nav class="side-nav">
+        <ul class="side-nav">
+          <li><a href="index.html" class="nav-item"><i class="icon-home"></i><span>🏠</span> Home</a></li>
+          <li><a href="about.html" class="nav-item"><i class="icon-about"></i><span>👤</span> About</a></li>
+          <li><a href="flight-info.html" class="nav-item"><i class="icon-flight"></i><span>🛫</span> Airport / Flight Info</a></li>
+          <li><a href="booking.html" class="nav-item"><span>🎟️</span> My Bookings</a></li>
+          <li><a href="procedure.html" class="nav-item"><i class="icon-doc"></i><span>📄</span> Procedure</a></li>
+          <li><a href="services.html" class="nav-item"><i class="icon-service"></i><span>🧭</span> Services & Facilities</a></li>
+          <li><a href="e-complaint.html" class="nav-item"><i class="icon-complaint"></i><span>📩</span> E-Complaint</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Sidebar Overlay -->
+    <div id="overlay"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+      <!-- Hero Section -->
+      <!-- Hero Section -->
+<section id="hero">
+  <div class="hero-wrapper">
+    <img src="images/banner.jpeg" alt="Airport aerial view" class="hero-background" />
+
+    <div id="flight-inquiry">
+      <h2>Flight Inquiry</h2>
+
+      <div class="trip-type">
+        <button class="trip-btn active-trip" id="domestic-btn">DOMESTIC</button>
+        <button class="trip-btn" id="international-btn">INTERNATIONAL</button>
+      </div>
+
+      <div class="route-row">
+        <div class="route-group">
+          <label for="from-input">From</label>
+          <select id="from-input" class="airport-select">
+            <!-- JavaScript will populate options -->
+          </select>
+        </div>
+
+        <div class="swap-icon" id="swap-icon">⇄</div>
+
+        <div class="route-group">
+          <label for="to-input">To</label>
+          <select id="to-input" class="airport-select">
+            <!-- JavaScript will populate options -->
+          </select>
+        </div>
+<div class="route-group">
+  <label for="flight-date">Date</label>
+  <div class="calendar-wrapper">
+    <input type="date" id="flight-date" class="airport-select" />
+    <span class="calendar-icon" id="calendar-icon">📅</span>
+  </div>
+</div>
+
+
+      </div>
+      <div class="search-btn-container">
+        <button id="search-flights-btn" class="search-submit-btn">🔍 Search Flights</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ✈️ Flight Message Box -->
+<div id="flight-message"></div>
+
+
+
+      <!-- Flight Schedule -->
+      <section id="schedule-section">
+        <h3>✈ WELCOME TO MUSAVI AIRPORT -- SUKKUR........!</h3>
+        <!-- <div id="schedule-search">
+          <input type="text" placeholder="Search" />
+          <button id="search-btn">🔍</button>
+        </div> -->
+      </section>
+
+      <!-- Future Content -->
+      <section id="more-content">
+        <!-- Additional content here -->
+      </section>
+    </main>
+  </div>
+
+  <!-- ============================
+       FOOTER
+       ============================ -->
+  <footer id="page-footer">
+    <div class="footer-content">
+      <p>© 2025 Musavi Airport — Sukkur. All rights reserved.</p>
+      <p>📍 Airport Road, Sukkur, Pakistan</p>
+
+      <div class="footer-links">
+        <a href="#">About Us</a> |
+        <a href="#">Contact</a> |
+        <a href="#">Complaint</a>
+      </div>
+
+      <div class="footer-social">
+        <a href="#"><span>🔵</span> Facebook</a>
+        <a href="#"><span>🐦</span> Twitter</a>
+        <a href="#"><span>📸</span> Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>

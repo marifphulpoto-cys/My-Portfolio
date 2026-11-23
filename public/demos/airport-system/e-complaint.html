@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>E-Complaint — Musavi Airport</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================
+       HEADER
+       ============================ -->
+  <header id="top-header">
+    <!-- Toggle Button -->
+    <button id="menu-toggle">☰ Menu</button>
+
+    <!-- Logo -->
+    <img id="site-logo" src="images/logo.jpeg" alt="Airport logo" />
+
+    <!-- Title -->
+    <div id="site-title">
+      <h1 class="airport-name">Musavi Airport <span class="airport-location">— Sukkur</span></h1>
+    </div>
+
+    <!-- Language -->
+    <div id="lang-switch">
+      
+      <button id="theme-toggle" class="theme-toggle-btn">🌙</button>
+    </div>
+  </header>
+
+  <!-- ============================
+       PAGE WRAPPER
+       ============================ -->
+  <div id="page-wrapper">
+
+    <!-- Sidebar -->
+     <aside id="sidebar">
+      <nav class="side-nav">
+        <ul class="side-nav">
+          <li><a href="index.html" class="nav-item"><i class="icon-home"></i><span>🏠</span> Home</a></li>
+          <li><a href="about.html" class="nav-item"><i class="icon-about"></i><span>👤</span> About</a></li>
+          <li><a href="flight-info.html" class="nav-item"><i class="icon-flight"></i><span>🛫</span> Airport / Flight Info</a></li>
+          <li><a href="booking.html" class="nav-item"><span>🎟️</span> My Bookings</a></li>
+          <li><a href="procedure.html" class="nav-item"><i class="icon-doc"></i><span>📄</span> Procedure</a></li>
+          <li><a href="services.html" class="nav-item"><i class="icon-service"></i><span>🧭</span> Services & Facilities</a></li>
+          <li><a href="e-complaint.html" class="nav-item"><i class="icon-complaint"></i><span>📩</span> E-Complaint</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Overlay -->
+    <div id="overlay"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+     <section id="complaint-section">
+  <h2>📝 Submit Your E-Complaint</h2>
+  <p>If you've experienced any inconvenience, please fill out the form below. We take your feedback seriously and aim to resolve all issues promptly and professionally.</p>
+
+  <form id="complaint-form">
+    <div class="form-group">
+      <label for="fullName">👤 Full Name <span class="required">*</span></label>
+      <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">📧 Email Address <span class="required">*</span></label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">📞 Phone Number <span class="required">*</span></label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+    </div>
+
+    <div class="form-group">
+      <label for="flightNumber">✈️ Flight Number (if applicable)</label>
+      <input type="text" id="flightNumber" name="flightNumber" placeholder="e.g., PK302">
+    </div>
+
+    <div class="form-group">
+      <label for="date">📅 Date of Incident <span class="required">*</span></label>
+      <input type="date" id="date" name="date" required>
+    </div>
+
+    <div class="form-group">
+      <label for="type">📝 Complaint Type <span class="required">*</span></label>
+      <select id="type" name="type" required>
+        <option value="">-- Select Type --</option>
+        <option>Baggage Issue</option>
+        <option>Flight Delay</option>
+        <option>Staff Behavior</option>
+        <option>Cleanliness</option>
+        <option>Security</option>
+        <option>Others</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="details">🖊️ Complaint Details <span class="required">*</span></label>
+      <textarea id="details" name="details" rows="5" placeholder="Describe your issue in detail..." required></textarea>
+    </div>
+
+    <div class="form-group checkbox">
+      <label>
+        <input type="checkbox" required>
+        I confirm that the information provided is accurate to the best of my knowledge.
+      </label>
+    </div>
+
+    <button type="submit" class="submit-btn">🚀 Submit Complaint</button>
+  </form>
+</section>
+
+    </main>
+  </div>
+  <!-- ============================
+       FOOTER
+       ============================ -->
+  <footer id="page-footer">
+    <div class="footer-content">
+      <p>© 2025 Musavi Airport — Sukkur. All rights reserved.</p>
+      <p>📍 Airport Road, Sukkur, Pakistan</p>
+
+      <div class="footer-links">
+        <a href="#">About Us</a> |
+        <a href="#">Contact</a> |
+        <a href="#">Complaint</a>
+      </div>
+
+      <div class="footer-social">
+        <a href="#"><span>🔵</span> Facebook</a>
+        <a href="#"><span>🐦</span> Twitter</a>
+        <a href="#"><span>📸</span> Instagram</a>
+      </div>
+    </div>
+  </footer>
+  <!--popup for the thanks-->
+  <div id="popup-overlay"></div>
+<div id="success-popup" class="popup">
+  <div class="popup-content">
+    <h3>Thank you for your complaint!</h3>
+    <p>We’ll try our best to resolve the issue as soon as possible.</p>
+    <button id="popup-ok">OK</button>
+  </div>
+</div>
+
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

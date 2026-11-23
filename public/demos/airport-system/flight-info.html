@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Airport / Flight Info — Musavi Airport</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="top-header">
+    <button id="menu-toggle">☰</button>
+    <img id="site-logo" src="images/logo.jpeg" alt="Airport logo" />
+    <div id="site-title">
+      <h1 class="airport-name">Musavi Airport <span class="airport-location">— Sukkur</span></h1>
+    </div>
+    <div id="lang-switch">
+      
+      <button id="theme-toggle" class="theme-toggle-btn">🌙</button>
+    </div>
+  </header>
+
+  <!-- OVERLAY -->
+  <div id="overlay"></div>
+
+  <!-- PAGE LAYOUT -->
+  <div id="page-wrapper">
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar">
+      <nav class="side-nav">
+        <ul class="side-nav">
+          <li><a href="index.html" class="nav-item"><i class="icon-home"></i><span>🏠</span> Home</a></li>
+          <li><a href="about.html" class="nav-item"><i class="icon-about"></i><span>👤</span> About</a></li>
+          <li><a href="flight-info.html" class="nav-item"><i class="icon-flight"></i><span>🛫</span> Airport / Flight Info</a></li>
+          <li><a href="booking.html" class="nav-item"><span>🎟️</span> My Bookings</a></li>
+          <li><a href="procedure.html" class="nav-item"><i class="icon-doc"></i><span>📄</span> Procedure</a></li>
+          <li><a href="services.html" class="nav-item"><i class="icon-service"></i><span>🧭</span> Services & Facilities</a></li>
+          <li><a href="e-complaint.html" class="nav-item"><i class="icon-complaint"></i><span>📩</span> E-Complaint</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+      <section id="flight-info-section">
+        <h2>🛫 Current Flight Schedule</h2>
+
+       <h3>✈️ Domestic Flight Schedule</h3>
+<br>
+<!-- Domestic Flights Table -->
+<div id="domestic-schedule">
+  <table class="flight-table">
+    <thead>
+      <tr>
+        <th>Flight</th>
+        <th>Airline</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Departure</th>
+        <th>Arrival</th>
+        <th>Gate</th>
+        <th>Status</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="flight-row" data-type="domestic" data-from="Lahore" data-to="Sukkur">
+        <td>PK302</td>
+        <td>PIA</td>
+        <td>Lahore</td>
+        <td>Sukkur</td>
+        <td>10:00 AM <small>(12/11/2025)</small></td>
+        <td>11:30 AM <small>(13/11/2025)</small></td>
+        <td>A1</td>
+        <td>On Time</td>
+        <td>Rs. 8,500</td>
+        <td><button class="book-now">Book Now</button></td>
+      </tr>
+      <tr class="flight-row" data-type="domestic" data-from="Islamabad" data-to="Sukkur">
+        <td>PK405</td>
+        <td>Airblue</td>
+        <td>Islamabad</td>
+        <td>Sukkur</td>
+        <td>1:00 PM <small>(12/11/2025)</small></td>
+        <td>2:45 PM <small>(12/11/2025)</small></td>
+        <td>B2</td>
+        <td>Delayed</td>
+        <td>Rs. 9,200</td>
+        <td><button class="book-now">Book Now</button></td>
+      </tr>
+      <tr class="flight-row"  data-type="domestic" data-from="Karachi" data-to="Sukkur">
+        <td>PK102</td>
+        <td>SereneAir</td>
+        <td>Karachi</td>
+        <td>Sukkur</td>
+        <td>6:00 PM <small>(12/11/2025)</small></td>
+        <td>7:20 PM <small>(12/11/2025)</small></td>
+        <td>C1</td>
+        <td>On Time</td>
+        <td>Rs. 7,800</td>
+        <td><button class="book-now">Book Now</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+<h3>🌍 International Flight Schedule</h3>
+<br>
+
+<!-- International Flights Table -->
+<div id="international-schedule">
+  <table class="flight-table">
+    <thead>
+      <tr>
+        <th>Flight</th>
+        <th>Airline</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Departure</th>
+        <th>Arrival</th>
+        <th>Gate</th>
+        <th>Status</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="flight-row" data-type="international" data-from="Dubai" data-to="Sukkur">
+        <td>EK611</td>
+        <td>Emirates</td>
+        <td>Dubai</td>
+        <td>Sukkur</td>
+        <td>2:00 PM <small>(12/11/2025)</small></td>
+        <td>6:30 PM <small>(12/11/2025)</small></td>
+        <td>D4</td>
+        <td>On Time</td>
+        <td>Rs. 45,000</td>
+        <td><button class="book-now">Book Now</button></td>
+      </tr>
+      <tr class="flight-row" data-type="international" data-from="Doha" data-to="Sukkur">
+        <td>QR620</td>
+        <td>Qatar Airways</td>
+        <td>Doha</td>
+        <td>Sukkur</td>
+        <td>4:00 AM <small>(12/11/2025)</small></td>
+        <td>8:15 AM <small>(12/11/2025)</small></td>
+        <td>C3</td>
+        <td>Delayed</td>
+        <td>Rs. 48,000</td>
+        <td><button class="book-now">Book Now</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+      </section>
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="page-footer">
+    <div class="footer-content">
+      <p>© 2025 Musavi Airport — Sukkur. All rights reserved.</p>
+      <p>📍 Airport Road, Sukkur, Pakistan</p>
+      <div class="footer-links">
+        <a href="#">About Us</a> |
+        <a href="#">Contact</a> |
+        <a href="#">Complaint</a>
+      </div>
+      <div class="footer-social">
+        <a href="#"><span>🔵</span> Facebook</a>
+        <a href="#"><span>🐦</span> Twitter</a>
+        <a href="#"><span>📸</span> Instagram</a>
+      </div>
+    </div>
+  </footer>
+ <!-- BOOKING FORM MODAL -->
+<div id="booking-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Flight Booking Form</h2>
+
+    <form id="booking-form">
+      <!-- Hidden fields populated by script -->
+      <input type="hidden" id="book-flight-num" />
+      <input type="hidden" id="book-price" />
+
+      <!-- 1. Passenger Info -->
+      <h3>1️⃣ Passenger Information</h3>
+      <label>Full Name*<input type="text" id="book-name" required placeholder="Enter passenger name"></label>
+      <label>Date of Birth*<input type="date" id="book-dob" required></label>
+      <label>Gender*
+        <select id="book-gender" required>
+          <option value="">Select</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label>Nationality*<input type="text" id="book-nationality" required placeholder="e.g., Pakistani"></label>
+      <label>Passport Number<input type="text" id="book-passport" placeholder="For international flights"></label>
+
+      <!-- 2. Contact Info -->
+      <h3>2️⃣ Contact Information</h3>
+      <label>Email*<input type="email" id="book-email" required placeholder="e.g., name@domain.com"></label>
+      <label>Phone*<input type="tel" id="book-phone" required placeholder="e.g., +923001234567"></label>
+
+      <!-- 3. Flight Details -->
+      <h3>3️⃣ Flight Details</h3>
+      <label>From*<input type="text" id="book-from" readonly required></label>
+      <label>To*<input type="text" id="book-to" readonly required></label>
+      <label>Travel Date*<input type="date" id="book-date" readonly required></label>
+      <label>Return Date<input type="date" id="book-return"></label>
+      <label>Flight Class*
+        <select id="book-class" required>
+          <option>Economy</option>
+          <option>Business</option>
+          <option>First</option>
+        </select>
+      </label>
+      <label>Adults*<input type="number" id="book-adults" min="1" value="1" required></label>
+      <label>Children<input type="number" id="book-children" min="0" value="0"></label>
+      <label>Infants<input type="number" id="book-infants" min="0" value="0"></label>
+
+      <!-- 4. Baggage -->
+      <h3>4️⃣ Baggage</h3>
+      <label>Checked Bags<input type="number" id="book-bags-checked" min="0" value="0"></label>
+      <label>Carry-on Bags<input type="number" id="book-bags-carry" min="0" value="0"></label>
+      <label>Luggage Weight (kg)<input type="number" id="book-bags-weight" min="0" value="0"></label>
+
+      <!-- 5. Meal -->
+      <h3>5️⃣ Meal Preference</h3>
+      <select id="book-meal">
+        <option>No Meal</option>
+        <option>Veg</option>
+        <option>Non-Veg</option>
+        <option>Special Meal</option>
+      </select>
+
+      <!-- 6. Payment -->
+      <h3>6️⃣ Payment Information</h3>
+      <label>Cardholder Name*<input type="text" id="book-card-name" required placeholder="Name on card"></label>
+      <label>Card Number*<input type="text" id="book-card-num" required placeholder="XXXX-XXXX-XXXX-XXXX"></label>
+      <label>Expiry Date*<input type="month" id="book-card-expiry" required></label>
+      <label>CVV*<input type="password" id="book-card-cvv" maxlength="4" required placeholder="XXX"></label>
+
+      <!-- 7. Optional -->
+      <h3>7️⃣ Optional</h3>
+      <label>Frequent Flyer Number<input type="text" id="book-frequent-flyer" placeholder="Optional"></label>
+      <label>Special Assistance<input type="text" id="book-assistance" placeholder="Optional"></label>
+      <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; margin-top: 10px;">
+        <input type="checkbox" id="book-insurance" style="width: auto; margin: 0;"> Include Travel Insurance
+      </label>
+
+      <!-- Confirm and Submit -->
+      <label style="display: flex; align-items: flex-start; gap: 8px; font-weight: normal; margin-top: 20px;">
+        <input type="checkbox" required style="width: auto; margin: 3px 0 0 0;">
+        <span>I confirm all the above information is accurate and valid. *</span>
+      </label>
+      <button type="submit">Submit Booking</button>
+    </form>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

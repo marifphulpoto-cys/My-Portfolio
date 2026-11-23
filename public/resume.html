@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Arif Phulpoto - Cybersecurity Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    @page {
+      size: A4;
+      margin: 12mm 15mm;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #0F172A;
+      background-color: #F8FAFC;
+      line-height: 1.45;
+      font-size: 13px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .resume-wrapper {
+      max-width: 820px;
+      margin: 20px auto;
+      background: #FFFFFF;
+      padding: 36px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border: 1px solid #E2E8F0;
+    }
+
+    @media print {
+      body {
+        background-color: #FFFFFF;
+      }
+      .resume-wrapper {
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        max-width: 100%;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #2563EB;
+      padding-bottom: 18px;
+      margin-bottom: 18px;
+      gap: 20px;
+    }
+
+    .header-info h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #0F172A;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .header-info .title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #2563EB;
+      margin-bottom: 6px;
+    }
+
+    .header-info .sub-meta {
+      font-size: 12px;
+      color: #475569;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-links {
+      text-align: left;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      color: #1E293B;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      background: #F8FAFC;
+      border: 1px solid #CBD5E1;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    .contact-links a {
+      color: #1D4ED8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section Styles */
+    .section {
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #1E293B;
+      border-bottom: 1px solid #E2E8F0;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #2563EB;
+      border-radius: 2px;
+    }
+
+    .summary-text {
+      color: #334155;
+      font-size: 12.5px;
+      text-align: justify;
+      line-height: 1.5;
+    }
+
+    /* Items */
+    .item {
+      margin-bottom: 12px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .item-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .item-subtitle {
+      font-size: 12px;
+      font-weight: 600;
+      color: #2563EB;
+    }
+
+    .item-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 500;
+    }
+
+    .item-desc {
+      font-size: 12px;
+      color: #334155;
+      margin-top: 3px;
+      line-height: 1.45;
+    }
+
+    .item-desc ul {
+      list-style-type: disc;
+      padding-left: 18px;
+      margin-top: 3px;
+    }
+
+    .item-desc li {
+      margin-bottom: 2px;
+    }
+
+    /* Badges */
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #BFDBFE;
+    }
+
+    .badge-red {
+      background: #FEF2F2;
+      color: #B91C1C;
+      border-color: #FECACA;
+    }
+
+    .badge-orange {
+      background: #FFF7ED;
+      color: #C2410C;
+      border-color: #FFEDD5;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      row-gap: 6px;
+      column-gap: 12px;
+      font-size: 12px;
+    }
+
+    .skills-label {
+      font-weight: 600;
+      color: #1E293B;
+    }
+
+    .skills-list {
+      color: #334155;
+    }
+
+    /* Print bar button */
+    .action-bar {
+      max-width: 820px;
+      margin: 15px auto 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .btn-primary {
+      background: #2563EB;
+      color: #FFFFFF;
+      border: none;
+    }
+    .btn-primary:hover {
+      background: #1D4ED8;
+    }
+
+    .btn-outline {
+      background: #FFFFFF;
+      color: #334155;
+      border: 1px solid #CBD5E1;
+    }
+    .btn-outline:hover {
+      background: #F1F5F9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar for web viewing (hidden on print) -->
+  <div class="action-bar no-print">
+    <button onclick="window.print()" class="btn btn-primary">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Print / Save as PDF
+    </button>
+    <a href="/Muhammad_Arif_Resume.pdf" download="Muhammad_Arif_Resume.pdf" class="btn btn-outline">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      Direct PDF Download
+    </a>
+  </div>
+
+  <div class="resume-wrapper">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-info">
+        <h1>Muhammad Arif Phulpoto</h1>
+        <div class="title">Cybersecurity Student • Blue Team Operations • Vulnerability Assessment (VAPT)</div>
+        <div class="sub-meta">
+          <span>Air University Islamabad (BS Cybersecurity)</span>
+          <span>•</span>
+          <span>Islamabad, Pakistan</span>
+          <span>•</span>
+          <span>Arifsec.com</span>
+        </div>
+      </div>
+      <div class="contact-links">
+        <div>Email: <a href="mailto:marifphulpoto7@gmail.com">marifphulpoto7@gmail.com</a></div>
+        <div>GitHub: <a href="https://github.com/marifphulpoto-cys" target="_blank">github.com/marifphulpoto-cys</a></div>
+        <div>LinkedIn: <a href="https://www.linkedin.com/in/muhammad-arif-068467383" target="_blank">linkedin.com/in/muhammad-arif</a></div>
+        <div>Upwork: <a href="https://www.upwork.com/freelancers/~012ee09c992fdf5623" target="_blank">Arif P. Profile</a></div>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="section">
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary-text">
+        Proactive BS Cybersecurity student at Air University Islamabad with verified credentials in Blue Team defense and practical Vulnerability Assessment & Penetration Testing (VAPT). Possesses hands-on experience designing isolated SOC laboratories, auditing operating systems against critical exploits (MS17-010 EternalBlue), analyzing log telemetry using Wazuh SIEM, and developing security software in C++ and modern web frameworks. Dedicated to identifying vulnerabilities and publishing actionable executive remediation reports.
+      </p>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Air University</span>, Islamabad, Pakistan
+            <span class="item-subtitle"> — Bachelor of Science in Cybersecurity (BS-CYS)</span>
+          </div>
+          <span class="item-date">2025 – Present</span>
+        </div>
+        <div class="item-desc">
+          Focus: Network Security, Blue Team Defense, Operating System Hardening, and Secure Systems Programming.
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications & Accreditations -->
+    <section class="section">
+      <h2 class="section-title">Certifications & Accreditations</h2>
+      
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Certified Blue Team Fundamentals (BTF)</span>
+            <span class="item-subtitle"> — CyberWarfare Labs</span>
+          </div>
+          <span class="item-date">November 2026</span>
+        </div>
+        <div class="item-desc">
+          Verified Credential ID: <code>6af4b474206a82a158460473</code>. Practical verification of blue team defensive operations, log analysis, threat detection, and incident response fundamentals.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Certified Ethical Hacker (CEH) & CCNA Course & Certification</span>
+            <span class="item-subtitle"> — CyberWing Academy</span>
+          </div>
+          <span class="item-date">October 2026</span>
+        </div>
+        <div class="item-desc">
+          Verification: <code>cyberwing.pk/verify (Q: 4520315069839)</code>. In-depth training on network penetration testing, OSI architecture, routing protocols, Cisco CLI, and defensive counter-measures.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Hands-on Security Lab Milestones</span>
+            <span class="item-subtitle"> — TryHackMe & OverTheWire</span>
+          </div>
+          <span class="item-date">August – September 2026</span>
+        </div>
+        <div class="item-desc">
+          <ul>
+            <li><strong>TryHackMe "Blue" Room:</strong> Successfully exploited MS17-010 (CVE-2017-0144), dumped hashes, and performed target hardening.</li>
+            <li><strong>OverTheWire Natas:</strong> Completed all web application penetration testing levels covering authentication bypass and SQLi.</li>
+            <li><strong>OverTheWire Bandit:</strong> Completed all Linux command-line and security navigation challenges.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects & Security Reports -->
+    <section class="section">
+      <h2 class="section-title">Featured Projects & Field Reports</h2>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Windows 7 SP1 VAPT Lab Assessment (30-Page Field Report)</span>
+          </div>
+          <span class="item-date">November 2026</span>
+        </div>
+        <div class="item-desc">
+          <ul>
+            <li>Conducted full-scope penetration testing on target host (<code>192.168.100.8</code>, PC1-PC).</li>
+            <li>Identified 11 verified vulnerabilities: <span class="badge badge-red">2 Critical</span> <span class="badge badge-orange">3 High</span> <span class="badge">2 Medium</span> <span class="badge">2 Low</span> <span class="badge">2 Informational</span>.</li>
+            <li>Validated Remote Code Execution (MS17-010 EternalBlue) via SMBv1, enumerated NetBIOS/RPC, and analyzed privilege escalation vectors with WES-NG.</li>
+            <li>Delivered an executive-ready 30-page remediation roadmap with patch procedures and registry hardening.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">SentryPAM — Privileged Access Management System</span>
+          </div>
+          <span class="item-date">October 2026</span>
+        </div>
+        <div class="item-desc">
+          Engineered a full-stack Privileged Access Management solution in C++ with a web frontend. Implemented 18 Object-Oriented Programming (OOP) design principles to enforce secure credential storage and administrative access delegation.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Musavi Airport Sukkur: Ticket Management System</span>
+          </div>
+          <span class="item-date">2026</span>
+        </div>
+        <div class="item-desc">
+          Collaborative airline operations web platform. Architected responsive frontend, flight schedule inquiry for domestic/international routes, booking workflow, and persistent theme states.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Home SOC & Detection Lab (VirtualBox, Wazuh SIEM, Windows 10, Kali)</span>
+          </div>
+          <span class="item-date">2026</span>
+        </div>
+        <div class="item-desc">
+          Configured virtualized defensive operations environment. Configured Wazuh SIEM agents to capture real-time telemetry, analyze failed logon events, and generate attack mitigation alerts.
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skills-label">Security & Blue Team:</div>
+        <div class="skills-list">Wazuh SIEM, Log Correlation, Incident Triage, System Hardening, Network Traffic Analysis, Vulnerability Remediation.</div>
+
+        <div class="skills-label">VAPT & Assessment:</div>
+        <div class="skills-list">Nmap, NetExec, enum4linux-ng, searchsploit, WES-NG, Metasploit Framework, Wireshark, MS17-010 PoC, CVE Auditing.</div>
+
+        <div class="skills-label">Networking & Protocols:</div>
+        <div class="skills-list">TCP/IP, Routing & Switching (CCNA), SMBv1/v2, NetBIOS, RPC, DNS, DHCP, HTTP/S, Packet Capture.</div>
+
+        <div class="skills-label">Programming & OS:</div>
+        <div class="skills-list">C++, Python, Bash Scripting, HTML5/CSS3, TypeScript, React, Kali Linux, Ubuntu, Windows Server / Windows 7/10/11.</div>
+
+        <div class="skills-label">Documentation:</div>
+        <div class="skills-list">30-Page VAPT Lab Reports, CVSS Risk Scoring, Technical Remediation Briefs, Executive Summaries.</div>
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="section" style="margin-bottom: 0;">
+      <h2 class="section-title">Languages</h2>
+      <div class="skills-grid">
+        <div class="skills-label">Languages:</div>
+        <div class="skills-list">Sindhi (Native), Urdu (Fluent), English (Professional / Conversational).</div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

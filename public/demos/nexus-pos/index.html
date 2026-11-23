@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexusStore — Modern POS & Smart Inventory SaaS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0B132B;
+      color: #E2E8F0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    header {
+      background: #1C2541;
+      border-bottom: 1px solid #3A506B;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: #2563EB;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: white;
+    }
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      flex: 1;
+      overflow: hidden;
+    }
+    /* Catalog */
+    .catalog-panel {
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .search-bar {
+      display: flex;
+      gap: 10px;
+    }
+    .search-input {
+      flex: 1;
+      background: #1C2541;
+      border: 1px solid #3A506B;
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: white;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+    }
+    .search-input:focus { outline: 2px solid #2563EB; }
+    .category-pills {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .cat-btn {
+      background: #1C2541;
+      color: #94A3B8;
+      border: 1px solid #3A506B;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .cat-btn.active {
+      background: #2563EB;
+      color: white;
+      border-color: #2563EB;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+    }
+    .product-card {
+      background: #1C2541;
+      border: 1px solid #3A506B;
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-2px);
+      border-color: #38BDF8;
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.15);
+    }
+    .p-title { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+    .p-sku { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #94A3B8; }
+    .p-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+    }
+    .p-price { font-weight: 700; color: #38BDF8; font-size: 15px; }
+    .p-stock { font-size: 10px; padding: 2px 6px; border-radius: 4px; background: rgba(16, 185, 129, 0.2); color: #34D399; }
+    /* Cart */
+    .cart-panel {
+      background: #161F38;
+      border-left: 1px solid #3A506B;
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid #3A506B;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cart-item {
+      background: #1C2541;
+      border: 1px solid #3A506B;
+      border-radius: 8px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .qty-btn {
+      width: 24px;
+      height: 24px;
+      background: #3A506B;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .cart-footer {
+      padding: 18px 20px;
+      border-top: 1px solid #3A506B;
+      background: #1C2541;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+    }
+    .btn-checkout {
+      background: #10B981;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.15s;
+    }
+    .btn-checkout:hover { background: #059669; }
+    .btn-khata {
+      background: #3B82F6;
+      color: white;
+      border: none;
+      padding: 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    /* Modal */
+    .receipt-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+    .receipt-card {
+      background: white;
+      color: #0F172A;
+      width: 320px;
+      padding: 24px;
+      border-radius: 12px;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-badge">
+      <div class="logo-icon">N</div>
+      <div>
+        <div style="font-weight: 700; font-size: 15px; color: white;">NexusStore POS</div>
+        <div style="font-size: 11px; color: #94A3B8;">KarobarOS Retail SaaS • Active Register #01</div>
+      </div>
+    </div>
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #38BDF8;">
+      Cashier: Muhammad Arif | Online (Supabase RLS)
+    </div>
+  </header>
+
+  <div class="main-grid">
+    <!-- Catalog -->
+    <div class="catalog-panel">
+      <div class="search-bar">
+        <input type="text" id="barcode-input" class="search-input" placeholder="Scan Barcode (e.g. 1001) or search product..." oninput="filterProducts()">
+      </div>
+
+      <div class="category-pills">
+        <button class="cat-btn active" onclick="setCategory('All', this)">All Items</button>
+        <button class="cat-btn" onclick="setCategory('Beverages', this)">Beverages</button>
+        <button class="cat-btn" onclick="setCategory('Snacks', this)">Snacks</button>
+        <button class="cat-btn" onclick="setCategory('Dairy', this)">Dairy</button>
+        <button class="cat-btn" onclick="setCategory('Bakery', this)">Bakery</button>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- POS Cart -->
+    <div class="cart-panel">
+      <div class="cart-header">
+        <span style="font-weight: 700;">Current Ticket (<span id="cart-count">0</span> items)</span>
+        <button onclick="clearCart()" style="background: none; border: none; color: #EF4444; font-size: 12px; cursor: pointer; font-weight: 600;">Clear</button>
+      </div>
+
+      <div class="cart-items" id="cart-items">
+        <div style="text-align: center; color: #64748B; margin-top: 60px; font-size: 13px;">
+          Cart is empty.<br>Click any product to add.
+        </div>
+      </div>
+
+      <div class="cart-footer">
+        <div style="display: flex; justify-content: space-between; font-size: 13px; color: #94A3B8;">
+          <span>Subtotal:</span>
+          <span id="subtotal-val">PKR 0</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 13px; color: #94A3B8;">
+          <span>Tax (0%):</span>
+          <span>PKR 0</span>
+        </div>
+        <div class="total-row">
+          <span>Net Total:</span>
+          <span style="color: #38BDF8;" id="total-val">PKR 0</span>
+        </div>
+        <button class="btn-checkout" onclick="checkoutCash()">Pay Cash & Print Receipt</button>
+        <button class="btn-khata" onclick="checkoutKhata()">Add to Customer Khata (Ledger)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Receipt Modal -->
+  <div class="receipt-modal" id="receipt-modal" onclick="closeModal()">
+    <div class="receipt-card" onclick="event.stopPropagation()">
+      <div style="font-size: 18px; font-weight: 800; border-bottom: 2px dashed #0F172A; padding-bottom: 8px;">NEXUS STORE</div>
+      <div style="font-size: 11px; margin-top: 4px; color: #64748B;">Air University Campus Branch</div>
+      <div style="font-size: 11px; margin-bottom: 12px; color: #64748B;">Cashier: M. Arif Phulpoto</div>
+      <div id="receipt-list" style="text-align: left; font-size: 12px; border-bottom: 1px dashed #94A3B8; padding-bottom: 8px;"></div>
+      <div style="display: flex; justify-content: space-between; font-weight: 800; margin: 10px 0; font-size: 14px;">
+        <span>TOTAL PAID:</span>
+        <span id="receipt-total">PKR 0</span>
+      </div>
+      <div style="font-size: 11px; color: #10B981; font-weight: bold;">PAYMENT APPROVED (CASH)</div>
+      <button onclick="closeModal()" style="margin-top: 14px; background: #0F172A; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; width: 100%;">Done (Close)</button>
+    </div>
+  </div>
+
+  <script>
+    const products = [
+      { id: 1, name: "Cold Brew Coffee", sku: "SKU-1001", cat: "Beverages", price: 350, stock: 42 },
+      { id: 2, name: "Mineral Water 1.5L", sku: "SKU-1002", cat: "Beverages", price: 100, stock: 95 },
+      { id: 3, name: "Artisan Croissant", sku: "SKU-1003", cat: "Bakery", price: 220, stock: 18 },
+      { id: 4, name: "Brown Toast Bread", sku: "SKU-1004", cat: "Bakery", price: 180, stock: 25 },
+      { id: 5, name: "Dark Chocolate 85%", sku: "SKU-1005", cat: "Snacks", price: 450, stock: 30 },
+      { id: 6, name: "Roasted Almonds 100g", sku: "SKU-1006", cat: "Snacks", price: 550, stock: 15 },
+      { id: 7, name: "Fresh Milk 1L", sku: "SKU-1007", cat: "Dairy", price: 260, stock: 40 },
+      { id: 8, name: "Greek Yogurt 200g", sku: "SKU-1008", cat: "Dairy", price: 290, stock: 22 }
+    ];
+
+    let cart = [];
+    let currentCat = 'All';
+
+    function renderProducts() {
+      const grid = document.getElementById('products-grid');
+      const search = document.getElementById('barcode-input').value.toLowerCase();
+      
+      const filtered = products.filter(p => {
+        const matchesCat = currentCat === 'All' || p.cat === currentCat;
+        const matchesSearch = p.name.toLowerCase().includes(search) || p.sku.toLowerCase().includes(search);
+        return matchesCat && matchesSearch;
+      });
+
+      grid.innerHTML = filtered.map(p => `
+        <div class="product-card" onclick="addToCart(${p.id})">
+          <div>
+            <div class="p-title">${p.name}</div>
+            <div class="p-sku">${p.sku}</div>
+          </div>
+          <div class="p-meta">
+            <span class="p-price">PKR ${p.price}</span>
+            <span class="p-stock">${p.stock} in stock</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function setCategory(cat, btn) {
+      currentCat = cat;
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderProducts();
+    }
+
+    function filterProducts() {
+      renderProducts();
+    }
+
+    function addToCart(id) {
+      const p = products.find(prod => prod.id === id);
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({ ...p, qty: 1 });
+      }
+      renderCart();
+    }
+
+    function updateQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.id !== id);
+      }
+      renderCart();
+    }
+
+    function clearCart() {
+      cart = [];
+      renderCart();
+    }
+
+    function renderCart() {
+      const container = document.getElementById('cart-items');
+      const count = document.getElementById('cart-count');
+      const subtotal = document.getElementById('subtotal-val');
+      const total = document.getElementById('total-val');
+
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      count.innerText = totalItems;
+      subtotal.innerText = `PKR ${totalPrice}`;
+      total.innerText = `PKR ${totalPrice}`;
+
+      if (cart.length === 0) {
+        container.innerHTML = '<div style="text-align: center; color: #64748B; margin-top: 60px; font-size: 13px;">Cart is empty.<br>Click any product to add.</div>';
+        return;
+      }
+
+      container.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <div>
+            <div style="font-weight: 600; font-size: 13px;">${item.name}</div>
+            <div style="font-size: 11px; color: #38BDF8;">PKR ${item.price} each</div>
+          </div>
+          <div class="qty-controls">
+            <button class="qty-btn" onclick="updateQty(${item.id}, -1)">-</button>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: bold; min-width: 18px; text-align: center;">${item.qty}</span>
+            <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function checkoutCash() {
+      if (cart.length === 0) {
+        alert("Cart is empty! Click products to add items first.");
+        return;
+      }
+      const list = document.getElementById('receipt-list');
+      const total = document.getElementById('receipt-total');
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      list.innerHTML = cart.map(item => `
+        <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+          <span>${item.qty}x ${item.name}</span>
+          <span>PKR ${item.price * item.qty}</span>
+        </div>
+      `).join('');
+
+      total.innerText = `PKR ${totalPrice}`;
+      document.getElementById('receipt-modal').style.display = 'flex';
+      clearCart();
+    }
+
+    function checkoutKhata() {
+      if (cart.length === 0) {
+        alert("Cart is empty!");
+        return;
+      }
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      alert(`[Digital Khata Updated]\nAdded debt of PKR ${totalPrice} to Customer Ledger.\nSynced with Supabase PostgreSQL!`);
+      clearCart();
+    }
+
+    function closeModal() {
+      document.getElementById('receipt-modal').style.display = 'none';
+    }
+
+    renderProducts();
+  </script>
+</body>
+</html>

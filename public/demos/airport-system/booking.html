@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Bookings — Musavi Airport</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================
+       HEADER
+       ============================ -->
+  <header id="top-header">
+    <!-- Toggle Button -->
+    <button id="menu-toggle">☰ Menu</button>
+
+    <!-- Logo -->
+    <img id="site-logo" src="images/logo.jpeg" alt="Airport logo" />
+
+    <!-- Title -->
+    <div id="site-title">
+      <h1 class="airport-name">Musavi Airport <span class="airport-location">— Sukkur</span></h1>
+    </div>
+
+    <!-- Language -->
+    <div id="lang-switch">
+      
+      <button id="theme-toggle" class="theme-toggle-btn">🌙</button>
+    </div>
+  </header>
+
+  <!-- ============================
+       PAGE LAYOUT
+       ============================ -->
+  <div id="page-wrapper">
+
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <nav class="side-nav">
+        <ul class="side-nav">
+          <li><a href="index.html" class="nav-item"><i class="icon-home"></i><span>🏠</span> Home</a></li>
+          <li><a href="about.html" class="nav-item"><i class="icon-about"></i><span>👤</span> About</a></li>
+          <li><a href="flight-info.html" class="nav-item"><i class="icon-flight"></i><span>🛫</span> Airport / Flight Info</a></li>
+          <li><a href="booking.html" class="nav-item"><span>🎟️</span> My Bookings</a></li>
+          <li><a href="procedure.html" class="nav-item"><i class="icon-doc"></i><span>📄</span> Procedure</a></li>
+          <li><a href="services.html" class="nav-item"><i class="icon-service"></i><span>🧭</span> Services & Facilities</a></li>
+          <li><a href="e-complaint.html" class="nav-item"><i class="icon-complaint"></i><span>📩</span> E-Complaint</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Sidebar Overlay -->
+    <div id="overlay"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <section class="bookings-section">
+        <h2>🎟️ My Flight Bookings</h2>
+        <p class="section-subtitle">Manage your booked flight tickets, print boarding passes, or request cancellations.</p>
+
+        <!-- No Bookings State -->
+        <div id="no-bookings-view" class="no-bookings" style="display: none;">
+          <p>You haven't booked any flights yet.</p>
+          <a href="flight-info.html" class="book-now" style="display: inline-block; text-decoration: none;">Book a Flight Now</a>
+        </div>
+
+        <!-- Bookings Grid -->
+        <div id="bookings-grid" class="bookings-grid">
+          <!-- Rendered dynamically by JavaScript -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ============================
+       FOOTER
+       ============================ -->
+  <footer id="page-footer">
+    <div class="footer-content">
+      <p>© 2025 Musavi Airport — Sukkur. All rights reserved.</p>
+      <p>📍 Airport Road, Sukkur, Pakistan</p>
+
+      <div class="footer-links">
+        <a href="about.html">About Us</a> |
+        <a href="#">Contact</a> |
+        <a href="e-complaint.html">Complaint</a>
+      </div>
+
+      <div class="footer-social">
+        <a href="#"><span>🔵</span> Facebook</a>
+        <a href="#"><span>🐦</span> Twitter</a>
+        <a href="#"><span>📸</span> Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
