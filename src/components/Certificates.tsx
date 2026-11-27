@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { siteContent } from '../data/content';
-import { Award, ExternalLink, BookOpen, ShieldCheck, ZoomIn, X, Sparkles } from 'lucide-react';
+import { ExternalLink, ZoomIn, X, Calendar, ShieldCheck } from 'lucide-react';
 import { RevealHeading, RevealCard } from './Reveal';
 
 export const Certificates: React.FC = () => {
@@ -8,107 +8,103 @@ export const Certificates: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <section id="certificates" className="py-10 lg:py-14 border-t border-slate-200/80 bg-white">
+    <section id="certificates" className="py-8 lg:py-10 border-t border-slate-200/80 bg-white">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono font-bold text-blue-800">
-              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-              <span>CREDENTIALS & ACHIEVEMENTS</span>
-            </div>
-            <RevealHeading>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading mt-2">
-                Certificates & Learning Milestones
-              </h2>
-            </RevealHeading>
-            <p className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
-              Verified certifications, blue team fundamentals, and verified laboratory milestones.
-            </p>
-          </div>
+        <div className="mb-5">
+          <RevealHeading>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-heading tracking-tight">
+              Certificates
+            </h2>
+          </RevealHeading>
+          <p className="text-xs sm:text-sm text-slate-600 font-medium mt-0.5">
+            Verified credentials earned through coursework and practical lab exams.
+          </p>
         </div>
 
-        {/* Compact Certificates Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 items-stretch">
+        {/* 3 Certificate Cards in 1 Row */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
           {certificatesAndLearning.map((item, idx) => (
             <RevealCard key={item.id} index={idx} className="h-full flex flex-col">
-              <div className="glass-panel p-3.5 sm:p-4 rounded-xl flex flex-col justify-between h-full bg-white hover:border-blue-400 hover:shadow-md transition-all border border-slate-200/90 group flex-1">
+              <div className="p-4 rounded-xl flex flex-col justify-between h-full bg-slate-50/70 border border-slate-200 hover:border-slate-300 transition-all flex-1">
                 <div>
                   
-                  {/* Top Bar with Icon & Date */}
-                  <div className="flex items-center justify-between gap-2 mb-2.5">
-                    <div className="p-1.5 rounded-lg bg-blue-50 text-blue-600 border border-blue-200 group-hover:scale-105 transition-transform">
-                      {item.link ? <Award className="w-4 h-4 text-blue-600" /> : <BookOpen className="w-4 h-4 text-slate-600" />}
-                    </div>
+                  {/* Top Bar with Issuer & Date */}
+                  <div className="flex items-center justify-between gap-2 mb-2 text-xs">
+                    {item.issuer && (
+                      <span className="font-medium text-blue-700 flex items-center gap-1">
+                        <ShieldCheck className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                        <span className="truncate">{item.issuer}</span>
+                      </span>
+                    )}
                     {item.date && (
-                      <span className="text-[10px] font-mono text-slate-700 font-bold bg-slate-100 px-2 py-0.5 rounded-md border border-slate-200">
+                      <span className="text-[11px] text-slate-500 font-medium flex items-center gap-1 shrink-0">
+                        <Calendar className="w-3 h-3 text-slate-400" />
                         {item.date}
                       </span>
                     )}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xs sm:text-sm font-bold text-slate-950 font-heading mb-1 line-clamp-2 group-hover:text-blue-600 transition-colors leading-snug">
+                  <h3 className="text-sm font-bold text-slate-900 font-heading mb-2 leading-snug">
                     {item.title}
                   </h3>
 
-                  {/* Issuer */}
-                  {item.issuer && (
-                    <div className="text-[11px] font-mono font-bold text-blue-700 mb-2 flex items-center gap-1">
-                      <ShieldCheck className="w-3 h-3 text-blue-600 shrink-0" />
-                      <span className="truncate">{item.issuer}</span>
-                    </div>
-                  )}
-
-                  {/* Certificate Image Preview if Available */}
+                  {/* Certificate Image Preview */}
                   {item.image && (
                     <div 
                       onClick={() => setSelectedImage(item.image || null)}
-                      className="relative my-2 rounded-lg overflow-hidden border border-slate-200 group/img cursor-pointer shadow-xs hover:shadow-sm transition-all"
+                      className="relative my-2 rounded-lg overflow-hidden border border-slate-200 group/img cursor-pointer shadow-xs bg-white"
                     >
                       <img 
                         src={item.image} 
                         alt={item.title}
-                        className="w-full h-28 object-cover object-center group-hover/img:scale-105 transition-transform duration-300"
+                        className="w-full h-32 object-cover object-center group-hover/img:scale-102 transition-transform duration-300"
                       />
-                      <div className="absolute inset-0 bg-slate-900/30 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center gap-1 text-white text-[11px] font-mono font-bold backdrop-blur-xs">
+                      <div className="absolute inset-0 bg-slate-900/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center gap-1 text-white text-xs font-medium backdrop-blur-xs">
                         <ZoomIn className="w-3.5 h-3.5" />
-                        <span>Enlarge</span>
+                        <span>Enlarge Certificate</span>
                       </div>
                     </div>
                   )}
 
-                  {/* Status / Note */}
+                  {/* Note / ID */}
                   {item.note && (
-                    <div className="text-[11px] font-mono text-slate-700 bg-slate-50 px-2 py-1 rounded-md border border-slate-200 mb-2 leading-relaxed">
+                    <div className="text-[11px] text-slate-600 bg-white px-2.5 py-1 rounded-md border border-slate-200 mb-2 truncate">
                       {item.note}
                     </div>
                   )}
                 </div>
 
-                {/* Verification Link */}
-                {item.link ? (
-                  <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
+                {/* Actions: Verify Link & View */}
+                <div className="pt-2.5 border-t border-slate-200/80 flex items-center justify-between gap-2">
+                  {item.link ? (
                     <a
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[11px] font-mono font-bold text-blue-700 hover:text-blue-900 flex items-center gap-1 group/link py-0.5"
+                      className="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium flex items-center gap-1 transition-all"
                     >
-                      <span>Verify Credential</span>
-                      <ExternalLink className="w-3 h-3 transition-transform duration-200 group-hover/link:translate-x-0.5" />
+                      <span>Verify Certificate</span>
+                      <ExternalLink className="w-3 h-3" />
                     </a>
-                    <span className="text-[9px] font-mono text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
-                      Verified
-                    </span>
-                  </div>
-                ) : (
-                  <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-400">
-                    <span>Self-Directed</span>
-                    <span className="text-slate-600 font-bold">Lab Target</span>
-                  </div>
-                )}
+                  ) : (
+                    <div className="text-xs text-slate-500 font-medium">Verified Credential</div>
+                  )}
+
+                  {item.image && (
+                    <button
+                      type="button"
+                      onClick={() => setSelectedImage(item.image || null)}
+                      className="px-2.5 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 text-xs font-medium border border-slate-200 flex items-center gap-1 transition-all cursor-pointer"
+                    >
+                      <ZoomIn className="w-3 h-3 text-slate-500" />
+                      <span>View</span>
+                    </button>
+                  )}
+                </div>
+
               </div>
             </RevealCard>
           ))}
@@ -116,24 +112,24 @@ export const Certificates: React.FC = () => {
 
       </div>
 
-      {/* Lightbox Modal for Certificate Fullscreen Inspection */}
+      {/* Lightbox Modal */}
       {selectedImage && (
         <div 
           onClick={() => setSelectedImage(null)}
-          className="fixed inset-0 z-[100001] bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer"
+          className="fixed inset-0 z-[100001] bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer"
         >
-          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl p-2 border border-slate-200" onClick={(e) => e.stopPropagation()}>
+          <div className="relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl p-2 border border-slate-200" onClick={(e) => e.stopPropagation()}>
             <button 
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-slate-900/70 text-white hover:bg-slate-950 transition-colors z-10 cursor-pointer"
-              aria-label="Close image preview"
+              className="absolute top-4 right-4 p-2 rounded-full bg-slate-900/80 text-white hover:bg-slate-950 transition-colors z-10 cursor-pointer"
+              aria-label="Close certificate preview"
             >
               <X className="w-5 h-5" />
             </button>
             <img 
               src={selectedImage} 
-              alt="Certificate Fullscreen" 
-              className="w-full max-h-[80vh] object-contain rounded-xl"
+              alt="Official Certificate Fullscreen" 
+              className="w-full max-h-[85vh] object-contain rounded-xl"
             />
           </div>
         </div>

@@ -1,6 +1,6 @@
 /**
  * Content Data Store
- * Updated with verified certificate credentials, completed milestones, and real images.
+ * Clean, authentic, human-written content for Muhammad Arif Phulpoto's portfolio.
  */
 
 export interface ProjectFeature {
@@ -53,24 +53,24 @@ export interface JourneyMilestone {
 export const siteContent = {
   hero: {
     name: "Muhammad Arif Phulpoto",
-    tagline: "I test my own labs, learn from what breaks, and write it up so anyone can fix it.",
-    openTo: "Open to internships, junior SOC analyst roles and small security report projects.",
+    tagline: "I learn by setting up my own labs, testing vulnerabilities, and writing practical reports on what works.",
+    openTo: "Open to cybersecurity internships, junior SOC analyst roles, and security testing projects.",
     roles: [
-      "Vulnerability Assessment",
-      "Full-Stack Web Developer",
-      "Blue Team Operations",
-      "SOC Lab Builder"
+      "Vulnerability Assessment (VAPT)",
+      "Blue Team Defense",
+      "SOC Lab Building",
+      "Security Tool Development"
     ]
   },
 
   about: {
-    heading: "About",
-    text: "I'm a BS Cybersecurity student at Air University Islamabad (started in 2025) and a Full-Stack Web Developer. I build secure software systems, architect retail SaaS platforms, run vulnerability assessments on systems I own, and turn technical findings into actionable engineering reports. My dual focus spans Blue Team defense and modern web application engineering.",
-    openTo: "Internships, Junior SOC Analyst roles, Full-Stack Web Development, and Security Audits.",
+    heading: "About Me",
+    text: "I am a BS Cybersecurity student at Air University Islamabad (started in 2025). Rather than just studying theory, I spend most of my time building isolated virtual lab environments, testing them with tools like Nmap, Metasploit, and Wazuh SIEM, and seeing how real attacks and defenses work in practice.\n\nRecently, I completed a full vulnerability assessment on a Windows 7 lab VM—identifying 11 security findings (including EternalBlue MS17-010) and writing a 30-page remediation report with CVSS scores. I also built SentryPAM, a Privileged Access Management tool in C++ with a web interface.\n\nI'm actively looking for internships, junior SOC analyst roles, or entry-level security testing opportunities.",
+    openTo: "Cybersecurity internships, Junior SOC Analyst roles, and entry-level security assessments.",
     languages: [
-      { language: "Sindhi", level: "native" },
-      { language: "Urdu", level: "fluent" },
-      { language: "English", level: "conversational" }
+      { language: "Sindhi", level: "Native" },
+      { language: "Urdu", level: "Fluent" },
+      { language: "English", level: "Conversational" }
     ],
     profileImage: "/profile.jpg"
   },
@@ -78,133 +78,113 @@ export const siteContent = {
   journey: [
     {
       step: 1,
-      title: "Linux basics",
-      detail: "OverTheWire Bandit completed",
+      title: "Linux Fundamentals",
+      detail: "Completed OverTheWire Bandit challenges covering Linux command-line security and navigation.",
       date: "August 2026"
     },
     {
       step: 2,
-      title: "Web security basics",
-      detail: "OverTheWire Natas completed",
+      title: "Web Security Basics",
+      detail: "Completed OverTheWire Natas challenges covering authentication bypass, path traversal, and SQL injection basics.",
       date: "August - September 2026"
     },
     {
       step: 3,
-      title: "TryHackMe Blue room completed",
-      detail: "TryHackMe \"Blue\" room: completed",
+      title: "TryHackMe: Blue Room",
+      detail: "Hands-on lab exploiting CVE-2017-0144 (MS17-010 EternalBlue), dumping password hashes, and testing patches.",
       date: "September 2026"
     },
     {
       step: 4,
-      title: "SentryPAM pushed to GitHub",
-      detail: "Full-stack Privileged Access Management system in C++",
+      title: "Built SentryPAM in C++",
+      detail: "Developed a full Privileged Access Management tool using 18 OOP design patterns with encrypted credential storage and a web UI.",
       date: "October 2026"
     },
     {
       step: 5,
-      title: "CEH and CCNA courses & certification completed",
-      detail: "Certified Ethical Hacker & CCNA credentials achieved",
+      title: "CEH & CCNA Coursework",
+      detail: "Completed certified ethical hacking training and Cisco networking coursework.",
       date: "October 2026"
     },
     {
       step: 6,
-      title: "Certified Blue Team Fundamentals earned",
-      detail: "CyberWarfare Labs certification achievement",
+      title: "Certified Blue Team Fundamentals (BTF)",
+      detail: "Earned official certification from CyberWarfare Labs covering defensive monitoring and triage.",
       date: "November 2026"
     },
     {
       step: 7,
-      title: "Windows 7 VAPT lab report written",
-      detail: "30-page report documenting 11 findings on Windows 7 lab VM",
+      title: "Windows 7 VAPT Report",
+      detail: "Wrote an in-depth 30-page technical report detailing 11 findings and remediation roadmaps for an isolated Windows 7 VM.",
       date: "November 2026"
     },
     {
       step: 8,
-      title: "CEH Practical Lab Assessment Passed",
-      detail: "Certificate of Labs Completion awarded by Cyberwing Solutions (CWP-26-C113-017)",
+      title: "Passed CEH Practical Lab Exam",
+      detail: "Awarded Certificate of Labs Completion from Cyberwing Solutions (CWP-26-C113-017).",
       date: "18 November 2026"
     }
   ] as JourneyMilestone[],
 
+  // Practical, genuine skills categories
   skills: [
     {
-      category: "Security",
+      category: "Vulnerability Assessment & Pen Testing",
       level: "Hands-on",
       skills: [
-        "Nmap",
-        "NetExec",
-        "enum4linux-ng",
-        "searchsploit",
-        "WES-NG",
-        "Metasploit (lab use)",
-        "vulnerability assessment",
-        "Kali Linux"
+        "Nmap & Port Scanning",
+        "Metasploit Framework",
+        "NetExec & enum4linux-ng",
+        "WES-NG & searchsploit",
+        "Technical Report Writing (CVSS)",
+        "Kali Linux & Active Labs"
       ]
     },
     {
-      category: "Networking",
+      category: "Blue Team & SOC Defense",
       level: "Hands-on",
       skills: [
-        "TCP/IP",
-        "DHCP and subnetting",
-        "CCNA Certification completed"
+        "Wazuh SIEM Setup",
+        "Sysmon Telemetry Rules",
+        "Windows & Linux Log Analysis",
+        "Brute-Force Attack Triage",
+        "File Integrity Checks (SHA256)",
+        "Patching & Remediation Roadmaps"
       ]
     },
     {
-      category: "Programming",
+      category: "Networking & Systems",
       level: "Hands-on",
       skills: [
-        "C++ with OOP",
-        "Python (including an LSB steganography tool and detection with zsteg and binwalk)",
-        "data structures"
+        "TCP/IP, Subnetting & DHCP",
+        "CCNA Concepts (Completed)",
+        "Linux Command Line",
+        "Windows Command Prompt",
+        "VirtualBox Lab Topologies"
       ]
     },
     {
-      category: "Blue team",
-      level: "Practicing",
-      skills: [
-        "Wazuh SIEM lab",
-        "log analysis",
-        "SPF, DKIM and DMARC concepts",
-        "file integrity checks with SHA256"
-      ]
-    },
-    {
-      category: "Systems",
+      category: "Programming & Tools",
       level: "Hands-on",
       skills: [
-        "Linux command line",
-        "Windows CMD scripting",
-        "VirtualBox labs"
-      ]
-    },
-    {
-      category: "Documentation",
-      level: "Hands-on",
-      skills: [
-        "security report writing",
-        "risk scoring and remediation plans"
-      ]
-    },
-    {
-      category: "Learning",
-      level: "Learning",
-      skills: [
-        "web security (OverTheWire Natas - Completed)",
-        "cloud security"
+        "C++ (18 OOP Design Patterns)",
+        "Python Scripting for Security",
+        "Steganography Tools (zsteg, binwalk)",
+        "Data Structures & Algorithms",
+        "Git & GitHub Workflows"
       ]
     }
   ] as SkillCategory[],
 
-  // Dedicated Cybersecurity & VAPT Projects
+  // 3 Verified Projects (Real previews, live demos / PDF reports)
   cyberProjects: [
     {
       id: "win7-vapt",
-      title: "Windows 7 SP1 VAPT Lab Assessment (30-Page Report)",
-      tag: "FLAGSHIP VAPT",
+      title: "Windows 7 SP1 VAPT Lab Report (30 Pages)",
+      tag: "VAPT Lab Report",
       image: "/vapt-cover.png",
-      shortSummary: "Full vulnerability assessment of Windows 7 VM with 11 findings, MS17-010 RCE & remediation plan.",
-      description: "Full vulnerability assessment and penetration test of an isolated Windows 7 SP1 lab VM (192.168.100.8). Tools: Nmap, NetExec, Metasploit scanner modules, enum4linux-ng, searchsploit, and WES-NG. Identified 11 distinct findings across five severity tiers, validated remote code execution via MS17-010 EternalBlue, enumerated SMB/NetBIOS, and delivered an executive remediation roadmap.",
+      shortSummary: "Full vulnerability assessment of an isolated Windows 7 VM with 11 documented findings, MS17-010 RCE, and remediation steps.",
+      description: "Conducted an end-to-end vulnerability assessment and penetration test against an isolated Windows 7 SP1 lab machine (192.168.100.8). Used Nmap, NetExec, Metasploit scanner modules, enum4linux-ng, searchsploit, and WES-NG. Identified 11 distinct findings across five severity levels, validated remote code execution via MS17-010 EternalBlue, enumerated SMB/NetBIOS, and authored a 30-page report with actionable remediation roadmaps.",
       features: [
         {
           title: "2 Critical Findings (MS17-010)",
@@ -219,11 +199,11 @@ export const siteContent = {
           description: "Over 180 missing Windows hotfixes, insecure service configurations & deprecated protocols."
         },
         {
-          title: "Executive Remediation Roadmap",
-          description: "30-page structured report including risk matrix, exploitation scenarios, and defense patching steps."
+          title: "Remediation Roadmap",
+          description: "30-page structured report including risk matrix, exploitation scenarios, and defensive patching steps."
         }
       ],
-      tools: ["Nmap", "MS17-010", "Metasploit", "NetExec", "enum4linux", "WES-NG"],
+      tools: ["Nmap", "Metasploit", "NetExec", "MS17-010", "WES-NG", "Report Writing"],
       result: "11 findings (2 Critical, 3 High, 2 Medium, 2 Low, 2 Informational)",
       links: [
         { label: "View PDF Report", url: "https://github.com/marifphulpoto-cys/win7-vapt-lab/blob/main/VAPT_Report_Win7.pdf" },
@@ -231,119 +211,13 @@ export const siteContent = {
       ]
     },
     {
-      id: "home-soc-lab",
-      title: "Home SOC & Threat Detection Lab",
-      tag: "HANDS-ON SOC",
-      image: "/home-soc-preview.png",
-      shortSummary: "Multi-VM virtualized SOC with Windows 10, Kali Linux, Sysmon telemetry & Wazuh SIEM alerts.",
-      description: "A multi-VM Security Operations Center built on VirtualBox containing Windows 10, Kali Linux, and Wazuh SIEM manager/indexer. Ingested live endpoint telemetry, analyzed brute-force logon events, and configured defensive alert rules.",
-      features: [
-        {
-          title: "Wazuh SIEM Ingestion",
-          description: "Real-time endpoint telemetry and log ingestion from Windows 10 agents via Wazuh indexer."
-        },
-        {
-          title: "Brute-Force Attack Simulation",
-          description: "Simulated offensive RDP and SMB brute-force attacks from Kali to validate detection rules."
-        },
-        {
-          title: "Sysmon Telemetry Configuration",
-          description: "Custom Sysmon XML rules tracking process injection, child process spawning & network beacons."
-        }
-      ],
-      tools: ["Wazuh SIEM", "VirtualBox", "Kali Linux", "Sysmon", "Log Analysis"],
-      links: []
-    },
-    {
-      id: "thm-blue-lab",
-      title: "TryHackMe: \"Blue\" Room Exploitation",
-      tag: "COMPLETED LAB",
-      image: "/thm-blue-preview.png",
-      shortSummary: "Exploitation of CVE-2017-0144 (MS17-010), NT AUTHORITY\\SYSTEM privilege & Mimikatz hash dumping.",
-      description: "Hands-on laboratory exploitation of CVE-2017-0144 (MS17-010 EternalBlue). Executed buffer overflow payload against unpatched Windows target, achieved SYSTEM privilege, dumped NTLM password hashes, and performed defensive patch verification.",
-      features: [
-        {
-          title: "Nmap NSE Vulnerability Scan",
-          description: "Identified smb-vuln-ms17-010 vulnerability on SMB port 445 without disruption."
-        },
-        {
-          title: "Kernel Exploitation & SYSTEM Privileges",
-          description: "Delivered staged shellcode gaining ring-0 NT AUTHORITY\\SYSTEM shell access."
-        },
-        {
-          title: "Credential Extraction & Mitigation",
-          description: "Extracted hashed passwords using Mimikatz and verified post-patch mitigation signatures."
-        }
-      ],
-      tools: ["Metasploit", "Nmap", "Mimikatz", "Wireshark"],
-      links: []
-    },
-    {
-      id: "log-correlation-engine",
-      title: "Log Correlation & Attack Graph Engine",
-      tag: "SECURITY TOOL",
-      image: "/correlation-preview.png",
-      shortSummary: "Graph theory engine correlating Linux auth & Nginx logs to identify cheapest defensive threat cuts.",
-      description: "A planned algorithmic engine that joins Linux auth logs and Apache/Nginx web server access logs into graph-based attack sequences to compute the cheapest defensive cut to break threat chains. Documented and architected.",
-      features: [
-        {
-          title: "Multi-Source Log Normalization",
-          description: "Regex parsers normalizing syslog, auth.log, and web server combined access logs."
-        },
-        {
-          title: "Attack Sequence Graph Modeling",
-          description: "Constructs directed acyclic graphs representing attacker reconnaissance, pivots, and persistence."
-        },
-        {
-          title: "Defensive Min-Cut Computation",
-          description: "Identifies the minimal set of firewall/firewall drop rules to disconnect the threat chain."
-        }
-      ],
-      tools: ["Python", "Graph Theory", "Regex", "SIEM Architecture"],
-      links: []
-    }
-  ] as Project[],
-
-  // Dedicated Full-Stack Web Development Projects (All with pictures and working live demos)
-  webProjects: [
-    {
-      id: "nexus-pos",
-      title: "NexusStore — Retail POS & Smart Inventory SaaS",
-      tag: "FULL-STACK SAAS",
-      image: "/pos-preview.png",
-      demoUrl: "/demos/nexus-pos/index.html",
-      shortSummary: "High-speed retail POS counter, automated inventory deduction, and customer dues ledger (Khata).",
-      description: "A high-performance Point of Sale (POS), inventory control, digital khata customer ledger, and expense management platform built for fast-moving retail stores. Features a lightning-fast cashier counter with barcode scanner support, automated real-time stock deduction, low-stock predictive alerts, customer credit tracking, and Role-Based Access Control (Admin vs Cashier).",
-      features: [
-        {
-          title: "Lightning-Fast POS Counter",
-          description: "Quick barcode scan, cashier keyboard shortcuts, instant cart calculation & receipt printing modal."
-        },
-        {
-          title: "Smart Inventory Control",
-          description: "Automated real-time stock deduction, SKU tracking, category filtering & low-stock predictive alerts."
-        },
-        {
-          title: "Digital Khata (Customer Ledger)",
-          description: "Complete credit balance ledger, customer dues tracking, payment history & transaction timestamps."
-        },
-        {
-          title: "Role-Based Access Control",
-          description: "Admin financial dashboard and analytics vs Cashier distraction-free transaction counter."
-        }
-      ],
-      details: "Tech Stack: React 19, TypeScript, TanStack Router, Supabase (PostgreSQL with RLS), Tailwind CSS, Framer Motion.",
-      tools: ["React 19", "TypeScript", "TanStack Router", "Supabase", "PostgreSQL", "Tailwind CSS", "Framer Motion"],
-      links: []
-    },
-    {
       id: "sentry-pam",
-      title: "SentryPAM — Privileged Access Management System",
-      tag: "SECURITY SOFTWARE",
+      title: "SentryPAM — Privileged Access Management",
+      tag: "Security Software",
       image: "/sentry-pam-preview.png",
       demoUrl: "/demos/sentry-pam/index.html",
-      shortSummary: "C++ core & web frontend PAM system enforcing RBAC, session audit logs, and credential vaults.",
-      description: "A full-stack Privileged Access Management system built with a C++ backend and modern web frontend. Utilizes 18 Object-Oriented Programming (OOP) design patterns and principles to securely store administrative credentials, log privilege access requests, and enforce role-based access control (RBAC).",
+      shortSummary: "Privileged Access Management system with a C++ backend and web interface, enforcing RBAC, audit logs, and credential vaults.",
+      description: "A full Privileged Access Management tool built with a C++ backend and a modern web interface. Built using 18 Object-Oriented Programming (OOP) design patterns to securely store administrative credentials, log privilege access requests, and enforce role-based access control (RBAC).",
       features: [
         {
           title: "Encrypted Credential Vault",
@@ -363,19 +237,19 @@ export const siteContent = {
         }
       ],
       details: "Features: Encrypted credential vault, privilege session logging, and role-based administration.",
-      tools: ["C++", "HTML5", "CSS3", "JavaScript", "OOP Design Patterns"],
+      tools: ["C++", "HTML5", "CSS3", "JavaScript", "OOP Patterns"],
       links: [
         { label: "GitHub Repository", url: "https://github.com/marifphulpoto-cys/Sentry-PAM" }
       ]
     },
     {
       id: "airport-ticketing",
-      title: "Musavi Airport: Flight Ticket Management System",
-      tag: "TEAM PROJECT",
+      title: "Musavi Airport: Flight Ticket Portal",
+      tag: "Web Application",
       image: "/airport-preview.png",
       demoUrl: "/demos/airport-system/index.html",
-      shortSummary: "Passenger flight reservation portal with live inquiry engine, booking flow, and theme persistence.",
-      description: "Comprehensive airline operations and passenger ticketing portal. Features domestic and international flight inquiry, flight schedule discovery, booking workflows, dynamic dark/light mode persistence, and customer e-complaint tracking.",
+      shortSummary: "Flight inquiry and reservation portal with interactive schedule search, ticket booking workflow, and dark/light theme.",
+      description: "A passenger flight ticketing and inquiry website built as a team project. Features domestic and international flight inquiry, flight schedule discovery, booking workflows, dark/light theme persistence, and customer e-complaint tracking.",
       features: [
         {
           title: "Flight Inquiry Engine",
@@ -386,7 +260,7 @@ export const siteContent = {
           description: "Interactive ticket reservation workflow with seat selection and digital boarding pass generation."
         },
         {
-          title: "Dynamic Theme Engine",
+          title: "Theme Engine",
           description: "Custom dark/light mode switching with persistent local state across user sessions."
         },
         {
@@ -399,89 +273,25 @@ export const siteContent = {
       links: [
         { label: "GitHub Repository", url: "https://github.com/marifphulpoto-cys/Ticketing-Management-System" }
       ]
-    },
-    {
-      id: "currency-exchanger",
-      title: "Smart Currency Exchanger & Converter",
-      tag: "WEB APPLICATION",
-      image: "/currency-exchanger-preview.png",
-      demoUrl: "/demos/currency-exchanger/index.html",
-      shortSummary: "Real-time currency converter with live exchange calculations and responsive financial UI.",
-      description: "Interactive real-time currency converter web application with live exchange rate calculation, multi-currency conversion math, and responsive financial user interface.",
-      features: [
-        {
-          title: "Real-Time Exchange Rates",
-          description: "Instant mathematical rate conversions across international currencies with high precision."
-        },
-        {
-          title: "Responsive Financial UI",
-          description: "Distraction-free, card-based interface tailored for quick lookups on mobile and desktop."
-        },
-        {
-          title: "Quick Currency Swap",
-          description: "One-click toggle between source and target currencies with automatic recalculation."
-        }
-      ],
-      tools: ["JavaScript", "HTML5", "CSS3", "Financial APIs"],
-      links: []
     }
   ] as Project[],
 
-  // Backward compatibility
-  projects: [
-    {
-      id: "win7-vapt",
-      title: "Windows 7 VAPT Lab Report",
-      image: "/vapt-cover.png",
-      description: "A full vulnerability assessment of my own Windows 7 lab VM. Tools: Nmap, NetExec, Metasploit scanner modules, enum4linux-ng, searchsploit and WES-NG. Result: 11 findings (2 Critical, 3 High, 2 Medium, 2 Low, 2 Informational). The most serious were MS17-010 (EternalBlue) and 180 missing security patches. The report includes risk scoring, possible attacks and a remediation plan. Detection only, no exploitation in this report.",
-      tools: ["Nmap", "NetExec", "Metasploit scanner modules", "enum4linux-ng", "searchsploit", "WES-NG"],
-      result: "11 findings (2 Critical, 3 High, 2 Medium, 2 Low, 2 Informational)",
-      links: [
-        { label: "GitHub Repository", url: "https://github.com/marifphulpoto-cys/win7-vapt-lab" },
-        { label: "View PDF Report", url: "https://github.com/marifphulpoto-cys/win7-vapt-lab/blob/main/VAPT_Report_Win7.pdf" }
-      ]
-    },
-    {
-      id: "sentry-pam",
-      title: "SentryPAM",
-      description: "A full-stack Privileged Access Management system built in C++ with a web frontend, using 18 OOP concepts.",
-      links: [
-        { label: "GitHub Repository", url: "https://github.com/marifphulpoto-cys/Sentry-PAM" }
-      ]
-    },
-    {
-      id: "airport-ticketing",
-      title: "Musavi Airport Sukkur: Ticket Management System",
-      description: "A team project. A web app with flight inquiry (domestic and international), my bookings, procedure, services and facilities, e-complaint and dark mode.",
-      details: "Team role: Implemented frontend architecture, dark mode theme persistence, and flight inquiry logic.",
-      links: [
-        { label: "GitHub Repository", url: "https://github.com/marifphulpoto-cys/Ticketing-Management-System" }
-      ]
-    },
-    {
-      id: "home-soc-lab",
-      title: "Home SOC Lab",
-      description: "A VirtualBox lab with Windows 10, Wazuh and Kali Linux machines, used to practice log monitoring.",
-      links: []
-    },
-    {
-      id: "log-correlation-engine",
-      title: "Log Correlation Engine",
-      tag: "Design stage",
-      description: "A planned engine that joins Linux auth and web logs into attack chains and finds the cheapest cut to stop them. Currently designed and documented, not built.",
-      links: []
-    }
-  ] as Project[],
+  // Web Projects list retained empty for type safety
+  webProjects: [] as Project[],
 
+  // Backward compatibility alias
+  projects: [] as Project[],
+
+  // 3 Official Certificates with direct verification links
   certificatesAndLearning: [
     {
       id: "btf-cert",
       title: "Certified Blue Team Fundamentals (BTF)",
       issuer: "CyberWarfare Labs",
-      date: "11 November 2026",
+      date: "November 2026",
       image: "/btf-certificate.png",
       link: "https://labs.cyberwarfare.live/credential/achievement/6af4b474206a82a158460473",
-      note: "Official Certification Achieved"
+      note: "Credential ID: 6af4b474206a82a158460473"
     },
     {
       id: "ceh-lab-cert",
@@ -489,8 +299,8 @@ export const siteContent = {
       issuer: "Cyberwing Solutions (Cyberwing.pk)",
       date: "18 November 2026",
       image: "/ceh-lab-certificate.jpg",
-      link: "https://cyberwing.pk",
-      note: "Sr. No: CWP-26-C113-017 • Practical Labs Completed"
+      link: "https://cyberwing.pk/verify/certificate/verify.php?view=285&q=4520315069839",
+      note: "Certificate Serial: CWP-26-C113-017"
     },
     {
       id: "ceh-ccna-cert",
@@ -499,25 +309,7 @@ export const siteContent = {
       date: "October 2026",
       image: "/ceh-ccna-certificate.png",
       link: "https://cyberwing.pk/verify/certificate/verify.php?view=285&q=4520315069839",
-      note: "Course & Official Certification Completed"
-    },
-    {
-      id: "otw-bandit",
-      title: "OverTheWire Bandit",
-      date: "August 2026",
-      note: "All levels completed"
-    },
-    {
-      id: "otw-natas",
-      title: "OverTheWire Natas",
-      date: "September 2026",
-      note: "Web Security Completed"
-    },
-    {
-      id: "thm-blue",
-      title: "TryHackMe \"Blue\" room",
-      date: "September 2026",
-      note: "EternalBlue exploitation lab completed"
+      note: "Course & Certification Completed • Q: 4520315069839"
     }
   ] as CertificateItem[],
 
@@ -548,5 +340,5 @@ export const siteContent = {
     whatsapp: "https://wa.me/923093383209"
   },
 
-  footer: "2026 Arifsec.com. Built by Muhammad Arif Phulpoto. All testing was done on systems I own."
+  footer: "© 2026 Muhammad Arif Phulpoto • Arifsec.tech"
 };

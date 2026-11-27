@@ -87,7 +87,7 @@ export const LiveDemoModal: React.FC<LiveDemoModalProps> = ({
                     </span>
                   </h3>
                   <p className="text-[11px] font-mono text-slate-400 truncate max-w-[280px] sm:max-w-md">
-                    Live Working Environment • Fully Interactive
+                    Live Demo Preview
                   </p>
                 </div>
               </div>

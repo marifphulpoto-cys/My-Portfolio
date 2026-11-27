@@ -100,7 +100,7 @@ export const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({
                     )}
                   </div>
                   <p className="text-[11px] font-mono text-slate-400 truncate">
-                    Detailed Project Architecture & Capabilities
+                    Project Overview & Details
                   </p>
                 </div>
               </div>
@@ -154,10 +154,10 @@ export const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({
                       onClose();
                       onLaunchDemo(project.title, project.demoUrl!, project.tag || 'Interactive Live App');
                     }}
-                    className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-mono font-bold text-xs sm:text-sm flex items-center gap-2 shadow-md shadow-emerald-600/20 transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                    className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs sm:text-sm flex items-center gap-2 shadow-sm shadow-emerald-600/20 transition-all hover:scale-105 active:scale-95 cursor-pointer"
                   >
                     <Play className="w-4 h-4 fill-white" />
-                    <span>Launch Working Live Demo</span>
+                    <span>Open Live Demo</span>
                   </button>
                 )}
 
@@ -186,9 +186,9 @@ export const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({
               {/* Verified Findings Severity Breakdown (if available, e.g. VAPT Report) */}
               {project.result && (
                 <div className="space-y-2 p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-700">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
                     <ShieldAlert className="w-4 h-4 text-red-600" />
-                    <span>DOCUMENTED FINDINGS BREAKDOWN:</span>
+                    <span>Findings Breakdown</span>
                   </div>
                   <div className="flex flex-wrap gap-1.5 font-mono text-[11px] font-bold">
                     <span className="px-2.5 py-1 rounded-lg bg-red-100 text-red-800 border border-red-300">
@@ -212,7 +212,7 @@ export const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({
 
               {/* Detailed Overview */}
               <div className="space-y-2">
-                <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded bg-blue-600"></span>
                   <span>Project Overview</span>
                 </h4>
@@ -224,9 +224,9 @@ export const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({
               {/* Key Features Breakdown Grid */}
               {project.features && project.features.length > 0 && (
                 <div className="space-y-3">
-                  <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-                    <span>Key Features & Functional Capabilities</span>
+                    <span>Key Features</span>
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {project.features.map((feat, fIdx) => (
@@ -250,11 +250,11 @@ export const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({
               {/* Special Details / Team Role (if available) */}
               {project.details && (
                 <div className="space-y-2">
-                  <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
                     <Layers className="w-3.5 h-3.5 text-blue-600" />
-                    <span>Architecture & Role Notes</span>
+                    <span>Role & Implementation Notes</span>
                   </h4>
-                  <div className="p-3.5 rounded-xl bg-blue-50/70 border border-blue-200 text-xs font-mono text-blue-950 font-bold leading-relaxed">
+                  <div className="p-3.5 rounded-xl bg-blue-50/70 border border-blue-200 text-xs font-medium text-blue-950 leading-relaxed">
                     {project.details}
                   </div>
                 </div>
@@ -263,8 +263,8 @@ export const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({
               {/* Full Tech Stack */}
               {project.tools && project.tools.length > 0 && (
                 <div className="space-y-2 pt-1 border-t border-slate-100">
-                  <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
-                    Full Technology Stack
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                    Technologies Used
                   </h4>
                   <div className="flex flex-wrap gap-1.5">
                     {project.tools.map((t, tIdx) => (

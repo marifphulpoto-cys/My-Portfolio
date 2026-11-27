@@ -12,7 +12,6 @@ import {
   Mail, 
   Github, 
   Linkedin, 
-  CheckCircle2, 
   Layers,
   FileText
 } from 'lucide-react';
@@ -63,7 +62,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           data-lenis-prevent="true"
           className="fixed inset-0 z-[99999] flex flex-col items-center justify-center p-2 sm:p-4 md:p-6 overflow-hidden"
         >
-          {/* Deep Backdrop (Highest Z-index to cover Navbar completely) */}
+          {/* Deep Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -85,7 +84,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             aria-labelledby="resume-title"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Pinned Top Action Bar (Header - always fixed at top of modal) */}
+            {/* Pinned Top Action Bar */}
             <div className="bg-slate-950 text-white px-4 sm:px-6 py-3 flex items-center justify-between border-b border-slate-800 shrink-0 shadow-sm">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold shadow-sm">
@@ -94,8 +93,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <div>
                   <h3 id="resume-title" className="text-sm font-bold font-heading text-white flex items-center gap-2">
                     Muhammad Arif Phulpoto
-                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-blue-600/30 text-blue-300 border border-blue-500/40">
-                      OFFICIAL RESUME
+                    <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-blue-600/30 text-blue-200 border border-blue-500/40">
+                      Resume
                     </span>
                   </h3>
                   <p className="text-[11px] font-mono text-slate-300 font-medium">
@@ -104,7 +103,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 </div>
               </div>
 
-              {/* Action Buttons: Small Download, Print & Close */}
+              {/* Action Buttons: Download, Print & Close */}
               <div className="flex items-center gap-2">
                 <a
                   href="/Muhammad_Arif_Resume.pdf"
@@ -113,8 +112,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                   title="Download Resume as PDF"
                 >
                   <Download className="w-3.5 h-3.5" />
-                  <span className="hidden sm:inline">Download Resume</span>
-                  <span className="sm:hidden">Download</span>
+                  <span className="hidden sm:inline">Download PDF</span>
                 </a>
 
                 <button
@@ -136,7 +134,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               </div>
             </div>
 
-            {/* Smooth Scrollable Printable Resume Sheet (Two-finger slide enabled via data-lenis-prevent & native overscroll) */}
+            {/* Smooth Scrollable Printable Resume Sheet */}
             <div 
               data-lenis-prevent="true"
               onWheel={(e) => e.stopPropagation()}
@@ -147,7 +145,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 overscrollBehavior: 'contain'
               }}
             >
-              
               {/* White A4 Sheet Wrapper */}
               <div className="max-w-[780px] mx-auto bg-white p-6 sm:p-10 rounded-xl shadow-md border border-slate-300 space-y-6">
                 
@@ -167,34 +164,34 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                         <span>•</span>
                         <span>Islamabad, Pakistan</span>
                         <span>•</span>
-                        <span className="font-bold text-blue-700">Arifsec.com</span>
+                        <span className="font-bold text-blue-700">Arifsec.tech</span>
                       </div>
                     </div>
 
-                    {/* Right: Clean, Structured, Perfectly Aligned Channels Box (No wrapping, always in order) */}
+                    {/* Right: Quick Action Channels */}
                     <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 shrink-0 text-xs sm:text-sm font-mono font-bold space-y-2 shadow-xs self-start md:self-center">
-                      <div className="flex items-center gap-2.5 text-slate-800">
+                      <div className="flex items-center gap-2 text-slate-800">
                         <WhatsAppIcon className="w-4 h-4 text-emerald-600 shrink-0" />
                         <a href="https://wa.me/923093383209" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:underline whitespace-nowrap">
-                          +92 309 3383209 (WhatsApp)
+                          Direct WhatsApp Chat
                         </a>
                       </div>
-                      <div className="flex items-center gap-2.5 text-slate-800">
+                      <div className="flex items-center gap-2 text-slate-800">
                         <Mail className="w-4 h-4 text-blue-600 shrink-0" />
                         <a href={`mailto:${contact.email}`} className="text-blue-700 hover:underline whitespace-nowrap">
-                          {contact.email}
+                          Send Email
                         </a>
                       </div>
-                      <div className="flex items-center gap-2.5 text-slate-800">
+                      <div className="flex items-center gap-2 text-slate-800">
                         <Github className="w-4 h-4 text-slate-900 shrink-0" />
                         <a href={contact.github} target="_blank" rel="noopener noreferrer" className="text-slate-900 hover:underline whitespace-nowrap">
-                          github.com/marifphulpoto-cys
+                          GitHub Profile
                         </a>
                       </div>
-                      <div className="flex items-center gap-2.5 text-slate-800">
+                      <div className="flex items-center gap-2 text-slate-800">
                         <Linkedin className="w-4 h-4 text-blue-700 shrink-0" />
                         <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline whitespace-nowrap">
-                          linkedin.com/in/muhammad-arif
+                          LinkedIn Profile
                         </a>
                       </div>
                     </div>
@@ -203,12 +200,12 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
                 {/* Professional Summary */}
                 <div>
-                  <h2 className="text-xs sm:text-sm font-mono font-extrabold uppercase tracking-wider text-slate-950 flex items-center gap-2 border-b-2 border-slate-200 pb-1.5 mb-2.5">
+                  <h2 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-950 flex items-center gap-2 border-b-2 border-slate-200 pb-1.5 mb-2.5">
                     <span className="w-2.5 h-2.5 rounded bg-blue-600 shrink-0"></span>
                     Professional Summary
                   </h2>
-                  <p className="text-xs sm:text-sm text-slate-900 leading-relaxed font-normal text-justify">
-                    BS Cybersecurity student at Air University Islamabad with demonstrated hands-on expertise in defensive Blue Team operations, Vulnerability Assessment & Penetration Testing (VAPT), and secure systems development. Certified Blue Team Fundamentals (CyberWarfare Labs) and completed CEH & CCNA certifications. Proven ability to build isolated SOC environments, perform deep-dive security audits (including a 30-page Windows 7 VAPT report with 11 documented findings), and develop systems in C++ and modern web frameworks. Actively seeking junior SOC analyst and security assessment roles.
+                  <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-normal text-justify">
+                    Cybersecurity student at Air University Islamabad with a strong practical focus on Blue Team defense and Vulnerability Assessment & Penetration Testing (VA/PT). Certified Blue Team Fundamentals (CyberWarfare Labs), passed the CEH Practical Laboratory Assessment (Cyberwing Solutions), and completed CEH & CCNA coursework. Experienced in setting up virtual lab environments, performing hands-on security testing, analyzing system logs, and writing technical reports—including a 30-page Windows 7 SP1 VAPT report detailing 11 findings and actionable remediation roadmaps. Actively seeking junior SOC analyst and cybersecurity internship opportunities.
                   </p>
                 </div>
 
@@ -234,7 +231,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                   </p>
                 </div>
 
-                {/* Certifications & Accreditations */}
+                {/* Certifications & Accreditations (3 Official Only with Direct Verify Links) */}
                 <div>
                   <h2 className="text-xs sm:text-sm font-mono font-extrabold uppercase tracking-wider text-slate-950 flex items-center gap-2 border-b-2 border-slate-200 pb-1.5 mb-2.5">
                     <Award className="w-4 h-4 text-blue-600 shrink-0" />
@@ -243,31 +240,31 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                   
                   <div className="space-y-3">
                     {/* BTF */}
-                    <div className="bg-slate-50 p-3 sm:p-3.5 rounded-xl border-2 border-slate-200">
+                    <div className="bg-slate-50 p-3 sm:p-3.5 rounded-xl border border-slate-200">
                       <div className="flex items-center justify-between font-extrabold">
                         <span className="text-slate-950 text-xs sm:text-sm">Certified Blue Team Fundamentals (BTF)</span>
                         <span className="font-mono text-xs text-slate-700 font-bold">November 2026</span>
                       </div>
                       <div className="text-blue-700 font-bold text-xs sm:text-sm mt-0.5">CyberWarfare Labs</div>
                       <p className="text-xs sm:text-sm text-slate-800 font-medium mt-1">
-                        Credential ID: <code className="bg-white px-2 py-0.5 rounded border border-slate-300 text-blue-800 font-mono font-bold">6af4b474206a82a158460473</code>. Practical verification of blue team defensive operations, log analysis, threat detection, and incident response fundamentals.
+                        Verified Credential: <a href="https://labs.cyberwarfare.live/credential/achievement/6af4b474206a82a158460473" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline font-mono font-bold">CyberWarfare Labs Verification (ID: 6af4b474206a82a158460473)</a>. Practical verification of blue team defensive operations, log analysis, threat detection, and incident response fundamentals.
                       </p>
                     </div>
 
                     {/* CEH Practical Lab Assessment */}
-                    <div className="bg-slate-50 p-3 sm:p-3.5 rounded-xl border-2 border-slate-200">
+                    <div className="bg-slate-50 p-3 sm:p-3.5 rounded-xl border border-slate-200">
                       <div className="flex items-center justify-between font-extrabold">
                         <span className="text-slate-950 text-xs sm:text-sm">CEH Practical Laboratory Assessment (Certificate of Labs Completion)</span>
                         <span className="font-mono text-xs text-slate-700 font-bold">18 November 2026</span>
                       </div>
                       <div className="text-blue-700 font-bold text-xs sm:text-sm mt-0.5">Cyberwing Solutions (Cyberwing.pk) • Serial No: CWP-26-C113-017</div>
                       <p className="text-xs sm:text-sm text-slate-800 font-medium mt-1">
-                        In recognition of successfully passing the CEH practical laboratory assessment and demonstrating required practical skills in ethical hacking, cybersecurity, network security, vulnerability assessment, security testing, and penetration testing.
+                        Verified Credential: <a href="https://cyberwing.pk/verify/certificate/verify.php?view=285&q=4520315069839" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline font-mono font-bold">cyberwing.pk/verify (Official Verification Link)</a>. Successfully passed practical laboratory assessment demonstrating hands-on skills in ethical hacking, vulnerability assessment, penetration testing, and security hardening.
                       </p>
                     </div>
 
                     {/* CEH & CCNA */}
-                    <div className="bg-slate-50 p-3 sm:p-3.5 rounded-xl border-2 border-slate-200">
+                    <div className="bg-slate-50 p-3 sm:p-3.5 rounded-xl border border-slate-200">
                       <div className="flex items-center justify-between font-extrabold">
                         <span className="text-slate-950 text-xs sm:text-sm">Certified Ethical Hacker (CEH) & CCNA Course & Certification</span>
                         <span className="font-mono text-xs text-slate-700 font-bold">October 2026</span>
@@ -277,22 +274,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                         Verified Credential: <a href="https://cyberwing.pk/verify/certificate/verify.php?view=285&q=4520315069839" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline font-mono font-bold">cyberwing.pk/verify (Q: 4520315069839)</a>. Hands-on network reconnaissance, routing & switching fundamentals, Cisco CLI, and penetration testing techniques.
                       </p>
                     </div>
-
-                    {/* Labs */}
-                    <div className="text-xs sm:text-sm text-slate-800 space-y-1.5 pt-1 font-medium">
-                      <div className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span><strong className="text-slate-950 font-bold">TryHackMe "Blue" Room:</strong> Successfully exploited MS17-010 EternalBlue, dumped hashes, and hardened target machine.</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span><strong className="text-slate-950 font-bold">OverTheWire Natas:</strong> Completed all web penetration testing levels covering authentication bypass and SQL injection.</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span><strong className="text-slate-950 font-bold">OverTheWire Bandit:</strong> Completed all Linux system security navigation and privilege escalation challenges.</span>
-                      </div>
-                    </div>
                   </div>
                 </div>
 
@@ -300,10 +281,10 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <div>
                   <h2 className="text-xs sm:text-sm font-mono font-extrabold uppercase tracking-wider text-slate-950 flex items-center gap-2 border-b-2 border-slate-200 pb-1.5 mb-2.5">
                     <Briefcase className="w-4 h-4 text-blue-600 shrink-0" />
-                    Key Security Projects & Field Reports
+                    Key Security Projects & Systems
                   </h2>
 
-                  <div className="space-y-4">
+                  <div className="space-y-3.5">
                     {/* VAPT Report */}
                     <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-200">
                       <div className="flex items-center justify-between font-extrabold">
@@ -315,12 +296,10 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                         <span className="px-2.5 py-0.5 rounded-lg bg-orange-100 text-orange-800 border border-orange-300">3 High</span>
                         <span className="px-2.5 py-0.5 rounded-lg bg-blue-100 text-blue-800 border border-blue-300">2 Medium</span>
                         <span className="px-2.5 py-0.5 rounded-lg bg-cyan-100 text-cyan-800 border border-cyan-300">2 Low</span>
-                        <span className="px-2.5 py-0.5 rounded-lg bg-slate-200 text-slate-800 border border-slate-300">2 Informational</span>
                       </div>
                       <ul className="list-disc pl-5 space-y-1 text-xs sm:text-sm text-slate-800 leading-relaxed font-normal">
-                        <li>Conducted end-to-end vulnerability assessment and penetration test against Windows 7 SP1 (PC1-PC, 192.168.100.8).</li>
-                        <li>Identified and validated Remote Code Execution vulnerability MS17-010 (CVE-2017-0144 EternalBlue) via SMBv1, enumerated open ports (135, 139, 445), and mapped privilege escalation vectors with WES-NG.</li>
-                        <li>Authored a full 30-page remediation report with actionable patch configurations and CVSS scores.</li>
+                        <li>Conducted end-to-end vulnerability assessment and penetration test against Windows 7 SP1 lab machine.</li>
+                        <li>Identified and validated Remote Code Execution vulnerability MS17-010 (CVE-2017-0144 EternalBlue), enumerated SMB/NetBIOS, and delivered an executive remediation roadmap.</li>
                       </ul>
                     </div>
 
@@ -331,29 +310,18 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                         <span className="font-mono text-xs text-slate-700 font-bold">October 2026</span>
                       </div>
                       <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-normal mt-1">
-                        Architected full-stack PAM in C++ with web UI, utilizing 18 Object-Oriented Programming (OOP) design principles to enforce role-based access control (RBAC) and administrative credential security.
+                        Built a Privileged Access Management system in C++ with a web frontend. Implemented 18 Object-Oriented Programming (OOP) design patterns, Role-Based Access Control (RBAC), session audit logging, and an encrypted credential vault.
                       </p>
                     </div>
 
                     {/* Airport Ticketing */}
                     <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-200">
                       <div className="flex items-center justify-between font-extrabold">
-                        <span className="text-slate-950 text-sm sm:text-base">Musavi Airport Sukkur: Ticket Management System</span>
+                        <span className="text-slate-950 text-sm sm:text-base">Musavi Airport: Ticket Management System</span>
                         <span className="font-mono text-xs text-slate-700 font-bold">2026</span>
                       </div>
                       <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-normal mt-1">
-                        Collaborative web app featuring domestic/international flight inquiry, booking management, dark mode persistence, and customer e-complaint tracking.
-                      </p>
-                    </div>
-
-                    {/* Home SOC Lab */}
-                    <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-200">
-                      <div className="flex items-center justify-between font-extrabold">
-                        <span className="text-slate-950 text-sm sm:text-base">Home SOC & Detection Lab (VirtualBox, Wazuh SIEM, Kali Linux, Windows 10)</span>
-                        <span className="font-mono text-xs text-slate-700 font-bold">2026</span>
-                      </div>
-                      <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-normal mt-1">
-                        Built virtualized security operations center. Configured Wazuh SIEM to monitor live telemetry, capture brute-force login attempts, and formulate defense alert rules.
+                        Airline flight reservation and ticket management web application featuring a live flight inquiry engine, dynamic theme persistence, passenger booking workflow, and feedback system.
                       </p>
                     </div>
                   </div>
@@ -361,26 +329,26 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
                 {/* Technical Skills */}
                 <div>
-                  <h2 className="text-xs sm:text-sm font-mono font-extrabold uppercase tracking-wider text-slate-950 flex items-center gap-2 border-b-2 border-slate-200 pb-1.5 mb-2.5">
+                  <h2 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-950 flex items-center gap-2 border-b-2 border-slate-200 pb-1.5 mb-2.5">
                     <Layers className="w-4 h-4 text-blue-600 shrink-0" />
-                    Technical Skills Matrix
+                    Technical Skills
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm">
                     <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                      <span className="font-extrabold text-slate-950 block mb-0.5">Vulnerability Assessment & VAPT:</span>
+                      <span className="text-slate-800 font-medium">Nmap, Metasploit Framework, NetExec, enum4linux-ng, WES-NG, searchsploit, Kali Linux.</span>
+                    </div>
+                    <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
                       <span className="font-extrabold text-slate-950 block mb-0.5">Blue Team & SOC Defense:</span>
-                      <span className="text-slate-800 font-medium">Wazuh SIEM, Log Analysis, Incident Triage, System Hardening, Network Traffic Inspection.</span>
+                      <span className="text-slate-800 font-medium">Wazuh SIEM Ingestion, Sysmon Telemetry, Windows/Linux Log Analysis, SHA256 Integrity Checks.</span>
                     </div>
                     <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-                      <span className="font-extrabold text-slate-950 block mb-0.5">Assessment & Pen Testing:</span>
-                      <span className="text-slate-800 font-medium">Nmap, NetExec, enum4linux-ng, searchsploit, WES-NG, Metasploit, Wireshark, MS17-010.</span>
+                      <span className="font-extrabold text-slate-950 block mb-0.5">Networking & Infrastructure:</span>
+                      <span className="text-slate-800 font-medium">TCP/IP, Subnetting, CCNA Certified, Linux CLI, Windows Scripting, VirtualBox Labs.</span>
                     </div>
                     <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-                      <span className="font-extrabold text-slate-950 block mb-0.5">Programming & Tools:</span>
-                      <span className="text-slate-800 font-medium">C++, Python, Bash Scripting, HTML/CSS, TypeScript, React, VirtualBox, Kali Linux.</span>
-                    </div>
-                    <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-                      <span className="font-extrabold text-slate-950 block mb-0.5">Documentation & Compliance:</span>
-                      <span className="text-slate-800 font-medium">30-Page VAPT Lab Reports, CVSS Risk Scoring, Mitigation Roadmaps, Executive Summaries.</span>
+                      <span className="font-extrabold text-slate-950 block mb-0.5">Programming & Software:</span>
+                      <span className="text-slate-800 font-medium">C++ (18 OOP Design Patterns), Python Security Automation, JavaScript, HTML5/CSS3, Git.</span>
                     </div>
                   </div>
                 </div>
@@ -396,7 +364,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                     <span>•</span>
                     <span>Urdu (Fluent)</span>
                     <span>•</span>
-                    <span>English (Professional Working Proficiency)</span>
+                    <span>English (Conversational / Professional)</span>
                   </div>
                 </div>
 
@@ -405,7 +373,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               {/* Bottom Notice */}
               <div className="text-center pb-4">
                 <p className="text-xs font-mono text-slate-600 font-bold">
-                  Arifsec.com • Muhammad Arif Phulpoto • All testing performed on owned lab systems.
+                  Arifsec.tech • Muhammad Arif Phulpoto • All testing performed on owned lab systems.
                 </p>
               </div>
 

@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Shield, Code2 } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 
-interface NavbarProps {
-  track: 'cyber' | 'web';
-  onTrackChange: (track: 'cyber' | 'web') => void;
-}
-
-export const Navbar: React.FC<NavbarProps> = ({ track, onTrackChange }) => {
+export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -37,21 +32,14 @@ export const Navbar: React.FC<NavbarProps> = ({ track, onTrackChange }) => {
     setTimeout(() => setGlitching(false), 280);
   };
 
-  const navLinks = track === 'cyber'
-    ? [
-        { label: "About", href: "#about" },
-        { label: "VAPT Labs", href: "#cybersecurity" },
-        { label: "Skills", href: "#skills" },
-        { label: "Journey", href: "#journey" },
-        { label: "Certificates", href: "#certificates" },
-        { label: "Contact", href: "#contact" },
-      ]
-    : [
-        { label: "About", href: "#about" },
-        { label: "Web Projects & Demos", href: "#web-development" },
-        { label: "Skills", href: "#skills" },
-        { label: "Contact", href: "#contact" },
-      ];
+  const navLinks = [
+    { label: "About", href: "#about" },
+    { label: "Projects", href: "#projects" },
+    { label: "Skills", href: "#skills" },
+    { label: "Journey", href: "#journey" },
+    { label: "Certificates", href: "#certificates" },
+    { label: "Contact", href: "#contact" },
+  ];
 
   return (
     <header 
@@ -66,18 +54,18 @@ export const Navbar: React.FC<NavbarProps> = ({ track, onTrackChange }) => {
           href="#hero" 
           onMouseEnter={triggerLogoGlitch}
           className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-lg p-1 group"
-          aria-label="Arifsec.com Home"
+          aria-label="Arifsec.tech Home"
         >
           <div className={`w-10 h-10 rounded-full overflow-hidden flex items-center justify-center transition-all group-hover:scale-110 shadow-sm ${
             glitching ? 'scale-125 rotate-6' : ''
           }`}>
-            <img src="/logo.png" alt="Arifsec.com Official Logo" className="w-full h-full object-cover" />
+            <img src="/logo.png" alt="Arifsec.tech Official Logo" className="w-full h-full object-cover" />
           </div>
           <div>
             <span className={`text-lg font-bold tracking-tight text-slate-900 font-heading ${
               glitching ? 'text-blue-600' : ''
             }`}>
-              Arifsec<span className="text-blue-600">.com</span>
+              Arifsec<span className="text-blue-600">.tech</span>
             </span>
             <span className="block text-[11px] font-mono text-slate-700 font-semibold -mt-1">
               Muhammad Arif Phulpoto
@@ -99,31 +87,8 @@ export const Navbar: React.FC<NavbarProps> = ({ track, onTrackChange }) => {
           ))}
         </nav>
 
-        {/* Action Button & Track Toggle */}
+        {/* Action Contact Button */}
         <div className="hidden md:flex items-center gap-3">
-          <div className="flex items-center p-1 bg-slate-100 rounded-xl border border-slate-300">
-            <button
-              type="button"
-              onClick={() => onTrackChange('cyber')}
-              className={`px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
-                track === 'cyber' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-700 hover:text-slate-950'
-              }`}
-            >
-              <Shield className="w-3.5 h-3.5" />
-              <span>Cyber</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => onTrackChange('web')}
-              className={`px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
-                track === 'web' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-700 hover:text-slate-950'
-              }`}
-            >
-              <Code2 className="w-3.5 h-3.5" />
-              <span>Web Dev</span>
-            </button>
-          </div>
-
           <a
             href="#contact"
             className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-md shadow-blue-500/20 hover:scale-[1.02] active:scale-[0.98] group"
@@ -136,7 +101,7 @@ export const Navbar: React.FC<NavbarProps> = ({ track, onTrackChange }) => {
         {/* Mobile Hamburger Toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-xl bg-slate-100 text-slate-700 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="md:hidden p-2 rounded-xl bg-slate-100 text-slate-700 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 cursor-pointer"
           aria-expanded={mobileMenuOpen}
           aria-label="Toggle navigation menu"
         >
@@ -148,36 +113,6 @@ export const Navbar: React.FC<NavbarProps> = ({ track, onTrackChange }) => {
       {/* Mobile Dropdown */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 shadow-lg">
-          {/* Mobile Track Selector */}
-          <div className="flex items-center p-1 bg-slate-100 rounded-xl border border-slate-300 mb-2">
-            <button
-              type="button"
-              onClick={() => {
-                onTrackChange('cyber');
-                setMobileMenuOpen(false);
-              }}
-              className={`flex-1 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
-                track === 'cyber' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-700'
-              }`}
-            >
-              <Shield className="w-3.5 h-3.5" />
-              <span>Cybersecurity</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                onTrackChange('web');
-                setMobileMenuOpen(false);
-              }}
-              className={`flex-1 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
-                track === 'web' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-700'
-              }`}
-            >
-              <Code2 className="w-3.5 h-3.5" />
-              <span>Web Dev</span>
-            </button>
-          </div>
-
           {navLinks.map((link) => (
             <a
               key={link.label}
